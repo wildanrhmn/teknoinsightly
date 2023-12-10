@@ -1,61 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
   --header-height: 3rem;
 
   /*=============Color mode===============*/
-  --main-color: #DDF2FD;
-  --secondary-color: #164863;
+  --main-color: #F4F6F8;
+  --secondary-color: #2AA8DA;
 
-  --main-text-color: #164863;
-  --secondary-text-color:#DDF2FD;
+  --main-text-color: #1E1E1E;
   
   --border-color: #DEE2E6;
 
   --additional-color1: #9BBEC8;
   --additional-color2: #427D9D;
-  /*======== .5 = 8px  | 1rem = 16px ===============*/
-  --big-font-size: 3.5rem;
-  --h1-font-size: 2.25rem;
-  --h2-font-size: 1.5rem;
-  --h3-font-size: 1.25rem;
-  --normal-font-size: 1rem;
-  --small-font-size: 0.875rem;
-  --smaller-font-size: 0.813rem;
-  --tiny-font-size: 0.625rem;
 
-  /*====Font Weight====*/
-  --font-normal: 400;
-  --font-medium: 500;
-  --font-semi-bold: 600;
-
-  /*====Margenes Bottom====*/
-  --mb-0-25: 0.25rem;
-  --mb-0-5: 0.5rem;
-  --mb-0-75: 0.75rem;
-  --mb-1: 1rem;
-  --mb-1-5: 1.5rem;
-  --mb-2: 2rem;
-  --mb-2-5: 2.5rem;
-  --mb-3: 3rem;
-
-  /*====Z-Index====*/
-  --z-tooltip: 10;
-  --z-fixed: 100;
-  --z-modal: 1000;
-}
-
-/*====Responsive Typography=====*/
-@media screen and (max-width: 992px) {
-  :root {
-    --big-font-size: 2.75rem;
-    --h1-font-size: 1.5rem;
-    --h2-font-size: 1.25rem;
-    --h3-font-size: 1.rem;
-    --normal-font-size: 0.938rem;
-    --small-font-size: 0.813rem;
-    --smaller-font-size: 0.75rem;
-  }
 }
 
 /*====Base Css=====*/
@@ -73,9 +31,10 @@ html {
 body,
 button,
 input,
-textarea {
+textarea,
+a {
   font-size: var(--normal-font-size);
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 body {
@@ -104,7 +63,7 @@ ul{
 
 a {
   text-decoration: none !important;
-  color: var(--secondary-text-color) !important;
+  color: var(--main-text-color) !important;
   cursor: pointer;
   transition: all 0.2s ease;
 
