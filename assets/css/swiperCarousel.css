@@ -45,7 +45,7 @@
   }
 
   .swiper__navigation__prev{
-    z-index: 9999;
+    z-index: 1;
     position: absolute;
     left: 18%;
     cursor: pointer;
@@ -57,7 +57,7 @@
   }
 
   .swiper__navigation__next{
-    z-index: 9999;
+    z-index: 1;
     position: absolute;
     right: 18%;
     cursor: pointer;

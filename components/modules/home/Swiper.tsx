@@ -19,7 +19,7 @@ const SwiperCarousel: FunctionComponent = () => {
   return (
     <section className="swiper__section">
       <div className="swiper__bg">
-        <div className="container">
+        <div className="container d-flex align-items-center justify-content-center">
           <Swiper
             slidesPerView={3}
             spaceBetween={15}

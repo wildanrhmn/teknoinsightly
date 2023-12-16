@@ -5,7 +5,7 @@
     transition: all 0.3s ease;
 }
 
-.container{
+.container__wrapper{
     height: 100%;
     display: flex;
     align-items: center;

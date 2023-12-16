@@ -1,6 +1,7 @@
 import { NextPage, Metadata } from "next";
 
 import SwiperCarousel from "@/components/modules/home/Swiper";
+import HomeContent from "@/components/modules/home/Home";
 
 export const metadata: Metadata = {
     title: 'TeknoInsight - Home',
@@ -12,6 +13,7 @@ const Home: NextPage = () => {
     return(
         <>
             <SwiperCarousel />
+            <HomeContent />
         </>
     )
 }

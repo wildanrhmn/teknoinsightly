@@ -21,7 +21,7 @@ const Header: FunctionComponent = () => {
 
     return (
         <section className='header'>
-            <div className='container'>
+            <div className='container container__wrapper'>
                 <div className='logo d-flex align-items-center'>
                     <Image src={logo} alt='logo' width={65} height={65} priority />
                 </div>
