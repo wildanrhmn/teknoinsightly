@@ -25,10 +25,10 @@ export default function RootLayout({
       <body>
         <Provider>
           <Header />
+          <div className="sidebar-overlay" onClick={removeOverlay}></div>
           <main>
             {children}
           </main>
-          <div className="sidebar-overlay" onClick={removeOverlay}></div>
           </Provider>
       </body>
     </html>
