@@ -54,7 +54,47 @@ const HomeContent: FunctionComponent = () => {
               <div className="content__card__footer" />
             </div>
           </div>
-          <div className="d-none d-md-block col-md-4 col-xl-3">Asidebar Here</div>
+          <div className="d-none d-md-flex flex-column gap-3 col-md-4 col-xl-3">
+            <div className="asidebar">
+                <div className="asidebar__header">
+                  <h3>Artikel Populer</h3>
+                </div>
+                <div className="asidebar__content">
+                   <div className="asidebar__content__item">
+                    <h5>Intel I9 9900K Version 7.00</h5>
+                    <span>Kemarin oleh Wildan Nur Rahman</span>
+                   </div>
+                   <div className="asidebar__content__item">
+                    <h5>Intel I9 9900K Version 7.00</h5>
+                    <span>Kemarin oleh Wildan Nur Rahman</span>
+                   </div>
+                   <div className="asidebar__content__item">
+                    <h5>Intel I9 9900K Version 7.00</h5>
+                    <span>Kemarin oleh Wildan Nur Rahman</span>
+                   </div>
+                </div>
+            </div>
+
+            <div className="asidebar">
+                <div className="asidebar__header">
+                  <h3>Tutorial Terbaru</h3>
+                </div>
+                <div className="asidebar__content">
+                   <div className="asidebar__content__item d-flex align-items-center gap-3">
+                    <div className="asidebar__content__image" />
+                    <h5>Cara mendapatkan RAM 8GB ddr5</h5>
+                   </div>
+                   <div className="asidebar__content__item d-flex align-items-center gap-3">
+                    <div className="asidebar__content__image" />
+                    <h5>Cara mendapatkan RAM 8GB ddr5</h5>
+                   </div>
+                   <div className="asidebar__content__item d-flex align-items-center gap-3">
+                    <div className="asidebar__content__image" />
+                    <h5>Cara mendapatkan RAM 8GB ddr5</h5>
+                   </div>
+                </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
