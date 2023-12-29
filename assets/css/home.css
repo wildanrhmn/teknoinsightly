@@ -53,6 +53,15 @@
     height: 150px;
 }
 
+.content__card hr {
+    border: none;
+    border-top: 2px dotted #000;
+    color: #fff;
+    background-color: #fff;
+    height: 1px;
+    width: 100%;
+}
+
 .asidebar__header{
     display: flex;
     align-items: center;

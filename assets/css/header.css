@@ -16,15 +16,15 @@
     width: max-content;
 }
 
-.tabs ul li{
+.tabs ul .nav__item{
     position: relative;
 }
 
-.tabs ul li .active{
+.tabs ul .nav__item .active{
     color: var(--secondary-color) !important;
 }
 
-.tabs ul li::after{
+.tabs ul .nav__item::after{
     position: absolute;
     content: '';
     width: 0%;
@@ -35,7 +35,7 @@
     transition: width 0.3s ease;
 }
 
-.tabs ul li:hover::after{
+.tabs ul .nav__item:hover::after{
     width: 100%;
 }
 
