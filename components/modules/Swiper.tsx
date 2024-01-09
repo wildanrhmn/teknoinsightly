@@ -7,9 +7,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from 'swiper/modules';
 
 import "swiper/css";
-import "../../../assets/css/swiperCarousel.css";
+import "../../assets/css/swiperCarousel.css";
 
-import dummyImg from '../../../assets/images/dummy_img.png';
+import dummyImg from '../../assets/images/dummy_img.png';
 
 import { Icon } from '@iconify/react';
 

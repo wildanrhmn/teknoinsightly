@@ -1,7 +1,7 @@
 import { NextPage, Metadata } from "next";
 
-import SwiperCarousel from "@/components/modules/utils/Swiper";
-import HomeContent from "@/components/modules/utils/Content";
+import SwiperCarousel from "@/components/modules/Swiper";
+import HomeContent from "@/components/modules/Content";
 
 export const metadata: Metadata = {
     title: 'TeknoInsight - Articles',

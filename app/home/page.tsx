@@ -1,7 +1,10 @@
 import { NextPage, Metadata } from "next";
 
-import SwiperCarousel from "@/components/modules/utils/Swiper";
-import HomeContent from "@/components/modules/utils/Content";
+import SwiperCarousel from "@/components/modules/Swiper";
+import Content from "@/components/modules/Content";
+
+//dummy
+import { posts, sidebarData } from "@/utils/dummy/Data";
 
 export const metadata: Metadata = {
     title: 'TeknoInsight - Home',
@@ -13,7 +16,7 @@ const Page: NextPage = () => {
     return(
         <>
             <SwiperCarousel />
-            <HomeContent />
+            <Content contentData={posts} sidebarData={sidebarData} />
         </>
     )
 }
