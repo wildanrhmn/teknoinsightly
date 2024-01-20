@@ -79,7 +79,7 @@ const Header: FunctionComponent = () => {
         </div>
         <Link
           id="mobile_btn"
-          className="d-block d-lg-none"
+          className="d-block d-lg-none bar-icon-container"
           href="#"
           onClick={sidebarOverlay}
         >
