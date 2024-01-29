@@ -6,6 +6,7 @@ import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import { Icon } from "@iconify/react";
 import { links } from "./links-data";
+
 import NavSubLinks from "./nav-sublinks";
 
 export default function NavLinks() {
@@ -15,7 +16,7 @@ export default function NavLinks() {
       {links.map((link) => (
         <div key={link.name} className="relative group">
           <Link
-            href={link.href}
+            href={link.hasDropdown ? '#' : link.href}
             className={clsx(
               'relative flex items-center gap-1 text-dark text-[14.5px] font-base',
               {

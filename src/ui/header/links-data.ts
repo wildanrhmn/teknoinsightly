@@ -21,8 +21,8 @@ export const links: NavLinks[] = [
     { name: "Tutorial", href: "/tutorial", hasDropdown: true, dropdownItems: [
         { name: "Desain", href: "/tutorial/design" },
         { name: "Software", href: "/tutorial/software" },
-        { name: "Hardware", href: "/tutorial/hardware" },
-        { name: "Other", href: "/tutorial/other" }, 
+        { name: "Hardware", href: "/tutorial/hardware" }, 
+        { name: "Other", href: "/tutorial/other" },
     ]},
     { name: "Kontak Kami", href: "/contact-us" },
 ];

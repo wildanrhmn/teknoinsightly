@@ -16,8 +16,8 @@ export default function TopTutorials({ topTutorialData }: TopTutorialsProps){
               const pathDetail = `/tutorial/${tutorial.id}`;
               return (
                 <div key={tutorial.id} className="flex items-center mb-[10px] gap-3">
-                    <div className="relative w-[47px] h-[47px]">
-                        <Image src="/dummy_img3.png" alt={tutorial.title} layout="fill" />
+                    <div className="relative w-[47px] h-[47px] flex-shrink-0">
+                        <Image src="/dummy_img3.png" alt={tutorial.title} fill />
                     </div>
                   <Link
                     href={pathDetail}

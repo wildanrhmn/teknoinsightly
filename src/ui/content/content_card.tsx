@@ -20,7 +20,7 @@ export default function ContentCard({ posts } : ContentCardProps){
                         </div>
                         <div className="flex items-center gap-5 mt-2 md:mt-1">
                             <div className="w-[100px] h-[100px] md:w-[120px] md:h-[120px] lg:w-[150px] lg:h-[150px] relative flex-shrink-0">
-                                <Image src="/dummy_img2.png" alt={post.title} layout="fill" />
+                                <Image src="/dummy_img2.png" alt={post.title} fill />
                             </div>
                             <p className="w-[100%] lg:w-[75%] text-[14px] lg:text-[15px] text-dark overflow-ellipsis overflow-y-hidden leading-[25px] lg:leading-[27px] line-clamp-4 md:line-clamp-5 lg:line-clamp-6">{post.body}</p>
                         </div>

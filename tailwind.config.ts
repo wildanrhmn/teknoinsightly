@@ -15,6 +15,16 @@ const config: Config = {
         border: "#DEE2E6",
       }
     },
+    keyframes: {
+      header:{
+        '0%': {
+          transform: 'translateY(-100%)',
+        },
+        '100%': {
+          transform: 'translateY(0)',
+        }
+      }
+    }
   },
   plugins: [],
 };

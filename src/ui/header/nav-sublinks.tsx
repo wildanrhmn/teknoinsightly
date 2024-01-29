@@ -1,10 +1,6 @@
 import Link from "next/link"
 import clsx from "clsx";
-
-type NavSubLinks = {
-    name: string
-    href: string
-}
+import { NavSubLinks } from "@/lib/definiton/definition";
 
 type NavSubLinksProps = {
     navData?: NavSubLinks[];

@@ -1,10 +1,11 @@
 import Image from "next/image"
 
 import NavLinks from "./nav-links"
+import MobileNavLinks from "./mobile-navlinks"
 import SearchButton from "./button"
+import BurgerBar from "./BurgerBar"
 
 export default function Header(){
-
     return(
         <header className="w-full bg-primary h-19">
             <div className="container mx-auto">
@@ -18,7 +19,10 @@ export default function Header(){
                     <div className="hidden lg:flex items-center">
                         <SearchButton />
                     </div>
-                  
+                    <div className="lg:hidden flex items-center mr-7 z-30">
+                        <BurgerBar />
+                    </div>
+                        <MobileNavLinks />
                 </div>
             </div>
         </header>

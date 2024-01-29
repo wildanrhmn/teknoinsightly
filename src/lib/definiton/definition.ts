@@ -24,3 +24,8 @@ export type SidebarData = {
     categories: Category[]
     posts: Post[]
 }
+
+export type NavSubLinks = {
+    name: string
+    href: string
+}
