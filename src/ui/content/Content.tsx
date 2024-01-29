@@ -1,6 +1,7 @@
 import ContentBreadcrumbs from "./content_breadcrumbs"
 import ContentCard from "./content_card"
 import TopArticles from "./content_aside1"
+import TopTutorials from "./content_aside2"
 
 import { posts, sidebarData } from "@/utils/Dummy"
 
@@ -21,6 +22,14 @@ export default function Content(){
                                 </h3>
                             </div>
                                 <TopArticles topArticlesData={sidebarData} />
+                        </div>
+                        <div className="asidebar-tutorials">
+                            <div className='flex items-center w-full h-[50px] flex-shrink-0 border-2 border-solid border-secondary relative rounded-[6px] mb-[7px] after:absolute after:w-[5%] after:h-full after:content-[" "] after:left-0 after:top-0 after:bg-secondary'>
+                                <h3 className="text-[24px] font-bold ml-[35px]">
+                                    Tutorial Terbaru
+                                </h3>
+                            </div>
+                            <TopTutorials topTutorialData={sidebarData} />
                         </div>
                     </div>
                 </div>
