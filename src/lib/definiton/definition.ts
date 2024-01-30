@@ -18,7 +18,9 @@ export type PopularList = {
 
 export type Category = {
     id: number
+    slug: string
     name: string
+    type: string
 }
 
 export type SidebarData = {

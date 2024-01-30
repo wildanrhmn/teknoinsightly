@@ -14,7 +14,7 @@ export default function MobileNavLinks() {
   return (
     <div
       className={clsx(
-        "bg-dark bg-opacity-95 w-full h-full absolute z-20 transition-all duration-200 translate-y-[-100%]",
+        "bg-dark bg-opacity-95 absolute h-[100vh] z-20 transition-all duration-200 translate-y-[-100%]",
         {
           "translate-y-[0%]": isActive,
         }

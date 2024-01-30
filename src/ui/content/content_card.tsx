@@ -20,7 +20,7 @@ export default function ContentCard({ posts } : ContentCardProps){
                             <span className="text-dark opacity-50 lg:text-[14px] md:text-[12px] text-[12px]">{`Dipublish ${post.published} oleh ${post.author}`}</span>
                             <div className="flex items-center gap-1 mt-1">
                                 <Link className="bg-dark text-primary px-3 py-1 text-xs rounded-md" href={path}>{post.type}</Link>
-                                <Link className="bg-dark text-primary px-3 py-1 text-xs rounded-md" href={`${path}/${post.category}`}>{post.category}</Link>
+                                <Link className="bg-dark text-primary px-3 py-1 text-xs rounded-md" href={`${path}/${post.category}`}>{post.category.replace("-", " ")}</Link>
                             </div>
                         </div>
                         <div className="flex items-center gap-5 mt-1 md:mt-1">

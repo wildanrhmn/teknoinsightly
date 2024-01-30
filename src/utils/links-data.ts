@@ -9,7 +9,7 @@ export const links: NavLinks[] = [
     { name: "Home", href: "/home" },
     { name: "Artikel", href: "/article", hasDropdown: true, dropdownItems: [
         { name: "Semua Artikel", href: "/article" },
-        { name: "Graphics Cards", href: "/article/graphics-cards" }, 
+        { name: "Graphics Cards", href: "/article/graphic-card" }, 
         { name: "Processors", href: "/article/processors" },
         { name: "Motherboards", href: "/article/motherboards" },
         { name: "Storage", href: "/article/storage" },

@@ -7,7 +7,7 @@ import BurgerBar from "./BurgerBar"
 
 export default function Header(){
     return(
-        <header className="w-full bg-primary h-19">
+        <header className="w-full bg-primary h-19 shadow-sm fixed top-0 z-10">
             <div className="container mx-auto">
                 <div className="flex justify-between">
                     <div className="flex items-center">
