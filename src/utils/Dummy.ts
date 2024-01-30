@@ -1,14 +1,3 @@
-const categories = [
-    {
-        id: 1,
-        name: 'Test Category 1',
-    },
-    {
-        id: 2,
-        name: 'Test Category 2',    
-    },
-]
-
 const posts = [
     {
         id: 1,
@@ -16,6 +5,7 @@ const posts = [
         published: '1 menit yang lalu',
         author: "Wildan",
         type: 'article',
+        category: 'graphic-card',
         body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
         do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -28,7 +18,27 @@ const posts = [
         ut labore et dolore magna aliqua. Ut enim ad minim veniam,
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex
         ea commodo consequat.`
-    }
+    },
+    {
+        id: 2,
+        title: 'Cara Menggunakan Intel I9 9900K di Windows 10',
+        published: '1 menit yang lalu',
+        author: "Wildan",
+        type: 'tutorial',
+        category: 'software',
+        body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+        do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+        irure dolor in reprehenderit in voluptate velit esse cillum
+        dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+        cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit, sed do eiusmod tempor incididunt
+        ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+        ea commodo consequat.`
+    },
 ]
 
 const sidebarData = [
@@ -49,4 +59,4 @@ const sidebarData = [
     },
 ]
 
-export { categories, posts, sidebarData }
+export { posts, sidebarData }

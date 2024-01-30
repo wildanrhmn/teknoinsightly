@@ -8,6 +8,7 @@ export type NavLinks = {
 export const links: NavLinks[] = [
     { name: "Home", href: "/home" },
     { name: "Artikel", href: "/article", hasDropdown: true, dropdownItems: [
+        { name: "Semua Artikel", href: "/article" },
         { name: "Graphics Cards", href: "/article/graphics-cards" }, 
         { name: "Processors", href: "/article/processors" },
         { name: "Motherboards", href: "/article/motherboards" },
@@ -16,13 +17,12 @@ export const links: NavLinks[] = [
         { name: "Power Supply", href: "/article/power-supply" },
         { name: "Cooling", href: "/article/cooling" },
         { name: "Accessories", href: "/article/accessories" },
-        { name: "Other", href: "/article/other" },
     ]},
     { name: "Tutorial", href: "/tutorial", hasDropdown: true, dropdownItems: [
+        { name: "Semua Tutorial", href: "/tutorial" },
         { name: "Desain", href: "/tutorial/design" },
         { name: "Software", href: "/tutorial/software" },
         { name: "Hardware", href: "/tutorial/hardware" }, 
-        { name: "Other", href: "/tutorial/other" },
     ]},
     { name: "Kontak Kami", href: "/contact-us" },
 ];

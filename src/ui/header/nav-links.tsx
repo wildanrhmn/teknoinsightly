@@ -5,7 +5,7 @@ import clsx from "clsx";
 
 import { usePathname } from "next/navigation";
 import { Icon } from "@iconify/react";
-import { links } from "./links-data";
+import { links } from "../../utils/links-data";
 
 import NavSubLinks from "./nav-sublinks";
 

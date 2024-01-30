@@ -5,6 +5,8 @@ import "./globals.css";
 import Header from "@/ui/header/Header";
 import { HeaderProvider } from "@/lib/context/HeaderContext";
 
+import Footer from "@/ui/footer/Footer";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -24,6 +26,7 @@ export default function RootLayout({
           <Header />
         </HeaderProvider>
         {children}
+        <Footer />
       </body>
     </html>
   );

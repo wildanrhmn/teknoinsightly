@@ -11,14 +11,19 @@ export default function ContentCard({ posts } : ContentCardProps){
     return(
         <>
             {posts.map((post, index) => {
-                const pathDetail = post.type === 'article' ? `/article/${post.id}` : `/tutorial/${post.id}`
+                const path = post.type === 'article' ? '/article' : '/tutorial'
+                const pathDetail = `${path}/${post.id}`
                 return(
                     <div key={index}>
                         <div className="flex flex-col">
                             <Link href={pathDetail} className="text-secondary lg:text-[24px] text-[18px] md:text-[22px] font-bold">{post.title}</Link>
                             <span className="text-dark opacity-50 lg:text-[14px] md:text-[12px] text-[12px]">{`Dipublish ${post.published} oleh ${post.author}`}</span>
+                            <div className="flex items-center gap-1 mt-1">
+                                <Link className="bg-dark text-primary px-3 py-1 text-xs rounded-md" href={path}>{post.type}</Link>
+                                <Link className="bg-dark text-primary px-3 py-1 text-xs rounded-md" href={`${path}/${post.category}`}>{post.category}</Link>
+                            </div>
                         </div>
-                        <div className="flex items-center gap-5 mt-2 md:mt-1">
+                        <div className="flex items-center gap-5 mt-1 md:mt-1">
                             <div className="w-[100px] h-[100px] md:w-[120px] md:h-[120px] lg:w-[150px] lg:h-[150px] relative flex-shrink-0">
                                 <Image src="/dummy_img2.png" alt={post.title} fill />
                             </div>

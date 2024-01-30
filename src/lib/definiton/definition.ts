@@ -5,6 +5,7 @@ export type Post = {
     author: string
     body: string
     type: string
+    category: string
 }
 
 export type PopularList = {

@@ -6,7 +6,7 @@ import clsx from "clsx";
 import { useContext } from "react";
 import { HeaderContext } from "@/lib/context/HeaderContext";
 import { usePathname } from "next/navigation";
-import { links } from "./links-data";
+import { links } from "../../utils/links-data";
 
 export default function MobileNavLinks() {
   const { isActive } = useContext(HeaderContext);
@@ -38,7 +38,7 @@ export default function MobileNavLinks() {
           </div>
         ))}
       </div>
-      <div className="flex items-center gap-3 px-5 mt-10">
+      <div className="flex items-center gap-5 px-5 mt-[55px]">
         <input type="text" className="w-full h-[33px] rounded-[16px] bg-primary outline-none border-none text-[13px] px-5 focus:border-solid focus:border-secondary focus:border-2" />
         <button className="rounded-[16px] bg-secondary text-primary px-[15px] w-[120px] h-[34px] font-medium text-[14px]">Cari</button>
       </div>
