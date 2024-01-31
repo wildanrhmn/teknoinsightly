@@ -14,9 +14,9 @@ export default function TopArticles({ topArticlesData }: TopArticlesProps) {
         </div>
         <div className="ps-[25px]">
           {topArticlesData
-            ?.filter((article) => article.category === "article")
+            ?.filter((article) => article.type === "article")
             .map((article) => {
-              const pathDetail = `/article/${article.id}`;
+              const pathDetail = `/article/article-detail/${article.id}`;
               return (
                 <div key={article.id} className="flex flex-col mb-[10px]">
                   <Link
@@ -25,7 +25,7 @@ export default function TopArticles({ topArticlesData }: TopArticlesProps) {
                   >
                     {article.title}
                   </Link>
-                  <span className="text-dark text-opacity-50 text-[13px]">{`Kemarin oleh ${article.author}`}</span>
+                  <span className="text-dark text-opacity-50 text-[13px]">{`${article.created_at} oleh ${article.author.name}`}</span>
                 </div>
               );
             })}

@@ -15,7 +15,7 @@ export default function Categories({ categories }: CategoriesProps) {
       <div className="ps-[25px] flex flex-wrap gap-5 mt-5 ">
         {categories?.map((category) => {
           const path = category.type === "article" ? "/article" : "/tutorial";
-          const pathDetail = `${path}/${category.id}`;
+          const pathDetail = `${path}/${category.slug}`;
           return (
             <div
               key={category.id}

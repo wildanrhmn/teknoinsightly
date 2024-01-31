@@ -18,13 +18,13 @@ export default function Footer(){
                     <div className="flex flex-col gap-1 sm:gap-5 text-primary items-center sm:items-start">
                         <h5 className="text-[24px] font-bold text-secondary">Kategori</h5>
                         <div className="flex flex-col gap-3 sm:gap-5 text-[14px] items-center sm:items-start">
-                            <Link href='/article/graphic-card' className="hover:underline hover:text-secondary">Graphics Cards</Link>
-                            <Link href='/article/processor' className="hover:underline hover:text-secondary">Processors</Link>
-                            <Link href='/article/motherboard' className="hover:underline hover:text-secondary">Motherboards</Link>
-                            <Link href='/article/storage' className="hover:underline hover:text-secondary">Storage</Link>
+                            <Link href='/article/graphic-cards' className="hover:underline hover:text-secondary">Graphics Cards</Link>
+                            <Link href='/article/processors' className="hover:underline hover:text-secondary">Processors</Link>
+                            <Link href='/article/motherboards' className="hover:underline hover:text-secondary">Motherboards</Link>
+                            <Link href='/article/storages' className="hover:underline hover:text-secondary">Storage</Link>
                             <Link href='/article/ram' className="hover:underline hover:text-secondary">RAM</Link>
-                            <Link href='/article/power-supply' className="hover:underline hover:text-secondary">Power Supply</Link>
-                            <Link href='/article/cooling' className="hover:underline hover:text-secondary">Cooling</Link>
+                            <Link href='/article/power-supplies' className="hover:underline hover:text-secondary">Power Supply</Link>
+                            <Link href='/article/coolings' className="hover:underline hover:text-secondary">Cooling</Link>
                             <Link href='/article/accessories' className="hover:underline hover:text-secondary">Accessories</Link>
                         </div>
                     </div>

@@ -15,9 +15,9 @@ export default function TopTutorials({ topTutorialData }: TopTutorialsProps) {
       </div>
       <div className="ps-[25px]">
         {topTutorialData
-          ?.filter((tutorial) => tutorial.category === "tutorial")
+          ?.filter((tutorial) => tutorial.type === "tutorial")
           .map((tutorial) => {
-            const pathDetail = `/tutorial/${tutorial.id}`;
+            const pathDetail = `/tutorial/tutorial-detail/${tutorial.id}`;
             return (
               <div
                 key={tutorial.id}
@@ -28,7 +28,7 @@ export default function TopTutorials({ topTutorialData }: TopTutorialsProps) {
                 </div>
                 <Link
                   href={pathDetail}
-                  className="text-[#203397] text-[18px] overflow-ellipsis overflow-y-hidden line-clamp-2"
+                  className="text-[#203397] text-[16px] overflow-ellipsis overflow-y-hidden line-clamp-2"
                 >
                   {tutorial.title}
                 </Link>

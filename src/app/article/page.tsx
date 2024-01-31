@@ -1,10 +1,10 @@
 import Content from "@/ui/content/Content"
-import { fetchPopularList, fetchCategories, fetchArticlePosts } from "@/lib/data"
+import { fetchPostsByType, fetchAllPopularList, fetchCategories } from "@/lib/data"
 
 export default async function Page() {
     const [posts, sidebarData, categories] = await Promise.all([
-        fetchArticlePosts(),
-        fetchPopularList(),
+        fetchPostsByType('article'),
+        fetchAllPopularList(),
         fetchCategories()
     ])
     return(

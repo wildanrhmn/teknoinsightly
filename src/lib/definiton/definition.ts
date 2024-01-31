@@ -1,19 +1,31 @@
 export type Post = {
     id: number
     title: string
-    published: string
-    author: string
+    created_at: string
+    updated_at: string
+    id_category: string
+    category: {
+        slug: string
+    }
+    id_author: string
+    author: {
+        name: string
+    }
     body: string
     type: string
-    category: string
+    image?: string
 }
 
 export type PopularList = {
     id: number
     title: string
-    published: string
-    author: string
-    category: string
+    id_author: string
+    created_at: string
+    author: {
+        name: string
+    }
+    image?: string
+    type: string
 }
 
 export type Category = {

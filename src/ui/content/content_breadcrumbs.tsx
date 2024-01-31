@@ -35,7 +35,7 @@ export default function ContentBreadcrumbs({ params }: { params?: string }) {
       ) : pathname === `/article/${params}` ? (
         <Breadcrumbs
           breadcrumbs={[
-            { label: "Artikel", href: "/articles" },
+            { label: "Artikel", href: "/article" },
             {
               label: `${params}`.replace("-", " "),
               href: `/article/${params}`,
@@ -46,7 +46,7 @@ export default function ContentBreadcrumbs({ params }: { params?: string }) {
       ) : pathname === `/tutorial/${params}` ? (
         <Breadcrumbs
           breadcrumbs={[
-            { label: "Tutorial", href: "/tutorials" },
+            { label: "Tutorial", href: "/tutorial" },
             {
               label: `${params}`.replace("-", " "),
               href: `/tutorial/${params}`,
