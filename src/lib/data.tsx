@@ -37,7 +37,7 @@ export async function fetchAllPosts(): Promise<Post[]> {
   }
 }
 export async function fetchPostsByType(
-  type: "tutorial" | "article"
+  type: "tutorial" | "article",
 ): Promise<Post[]> {
   noStore();
   try {
@@ -73,7 +73,8 @@ export async function fetchPostsByType(
 }
 
 export async function fetchPostsByCategory(
-  category: string, type: "tutorial" | "article"
+  category: string,
+  type: "tutorial" | "article",
 ): Promise<Post[]> {
   noStore();
 
@@ -110,7 +111,7 @@ export async function fetchPostsByCategory(
         ...post,
         created_at: formatDate(post.created_at),
       };
-    })
+    });
     return formattedData;
   } catch (error) {
     console.log("Database Error: ", error);

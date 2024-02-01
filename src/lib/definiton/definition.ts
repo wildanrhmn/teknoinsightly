@@ -1,54 +1,55 @@
 export type Post = {
-    id: number
-    title: string
-    created_at: string
-    updated_at: string
-    id_category: string
-    category: {
-        slug: string
-    }
-    id_author: string
-    author: {
-        name: string
-    }
-    body: string
-    type: string
-    image?: string
-}
+  id: number;
+  title: string;
+  created_at: string;
+  updated_at: string;
+  id_category: string;
+  category: {
+    slug: string;
+  };
+  id_author: string;
+  author: {
+    name: string;
+  };
+  body: string;
+  type: string;
+  image?: string;
+};
 
 export type PopularList = {
-    id: number
-    title: string
-    id_author: string
-    created_at: string
-    author: {
-        name: string
-    }
-    image?: string
-    type: string
-}
+  id: number;
+  title: string;
+  id_author: string;
+  created_at: string;
+  author: {
+    name: string;
+  };
+  image?: string;
+  type: string;
+};
 
 export type Category = {
-    id: number
-    slug: string
-    name: string
-    type: string
-}
+  id: number;
+  slug: string;
+  name: string;
+  type: string;
+};
 
 export type SidebarData = {
-    categories: Category[]
-    posts: Post[]
-}
+  categories: Category[];
+  posts: Post[];
+};
 
 export type NavSubLinks = {
-    name: string
-    href: string
-}
+  name: string;
+  href: string;
+};
 
 export type ContactForm = {
-    firstName: string
-    lastName?: string
-    email: string
-    company?: string
-    message: string
-}
+  id?: string;
+  firstName: string;
+  lastName?: string;
+  email: string;
+  organization?: string;
+  message: string;
+};

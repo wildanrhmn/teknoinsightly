@@ -17,7 +17,12 @@ type ContentProps = {
   params?: string;
 };
 
-export default function Content({ posts, sidebarData, categories, params }: ContentProps) {
+export default function Content({
+  posts,
+  sidebarData,
+  categories,
+  params,
+}: ContentProps) {
   const pathname = usePathname();
   return (
     <section className="lg:mt-[25px] mt-[0]">

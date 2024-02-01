@@ -1,4 +1,3 @@
-npm lint:fix
-npm test
-npm format
-npm coverage
+npm run lint
+npm run prettier
+npm run prettier:check

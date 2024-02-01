@@ -53,3 +53,11 @@ model Author {
   popularPost  PopularPost[]
 }
 
+model Contacted {
+  id        String @id @default(cuid())
+  name      String
+  email     String
+  organization  String?
+  message   String
+}
+

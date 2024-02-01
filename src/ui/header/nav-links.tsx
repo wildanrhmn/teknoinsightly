@@ -27,7 +27,7 @@ export default function NavLinks() {
               {
                 'after:content-[" "] after:absolute after:left-0 after:bottom-[-3px] after:w-0 after:h-[3px] after:bg-secondary after:transition-all after:duration-200 hover:after:w-full':
                   !link.hasDropdown,
-              }
+              },
             )}
           >
             {link.name}
