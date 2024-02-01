@@ -44,3 +44,11 @@ export type NavSubLinks = {
     name: string
     href: string
 }
+
+export type ContactForm = {
+    firstName: string
+    lastName?: string
+    email: string
+    company?: string
+    message: string
+}

@@ -1,0 +1,4 @@
+npm lint:fix
+npm test
+npm format
+npm coverage
