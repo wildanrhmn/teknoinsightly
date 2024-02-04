@@ -3,7 +3,17 @@
 import { usePathname } from "next/navigation";
 import Breadcrumbs from "@/utils/breadcrumbs";
 
-export default function DetailContentHead() {
+export default function DetailContentHead({
+  title,
+  date,
+  author,
+  id,
+}: {
+  title: string;
+  date: string;
+  author: string;
+  id: string;
+}) {
   const pathname = usePathname();
   return (
     <div className="w-full bg-[#D9D9D9] bg-opacity-20 p-6 sm:p-14">
@@ -14,8 +24,8 @@ export default function DetailContentHead() {
               { label: "Home", href: "/home" },
               { label: "Artikel", href: "/article" },
               {
-                label: "MSI RTX 4090Ti Overclock 8GB Vram",
-                href: "/article/msi-rtx-4090ti-overclock-8gb-vram",
+                label: title,
+                href: `/article/article-detail/${id}`,
                 active: true,
               },
             ]}
@@ -27,17 +37,17 @@ export default function DetailContentHead() {
               { label: "Tutorial", href: "/tutorial" },
               {
                 label: "MSI RTX 4090Ti Overclock 8GB Vram",
-                href: "/tutorial/msi-rtx-4090ti-overclock-8gb-vram",
+                href: `/tutorial/tutorial-detail/${id}`,
                 active: true,
               },
             ]}
           />
         )}
         <div className="flex flex-col items-center gap-1 text-center">
-          <h1 className="sm:text-[28px] text-[24px] font-extrabold">
-            MSI RTX 4090Ti Overclock 8GB Vram
-          </h1>
-          <span className="text-[13px] opacity-55">Dipublish kemarin oleh Wildan Nur Rahman</span>
+          <h1 className="sm:text-[28px] text-[24px] font-extrabold">{title}</h1>
+          <span className="text-[13px] opacity-55">
+            {`Dipublish pada ${date} oleh ${author}`}
+          </span>
         </div>
       </div>
     </div>

@@ -53,3 +53,13 @@ export type ContactForm = {
   organization?: string;
   message: string;
 };
+
+export type Comment = {
+  id: string;
+  id_post: string;
+  created_at: string;
+  name: string;
+  email: string;
+  website?: string;
+  message: string;
+}

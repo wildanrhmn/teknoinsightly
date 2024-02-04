@@ -16,11 +16,13 @@ export default function Comments() {
               />
             </div>
             <div className="flex flex-col sm:gap-1 gap-3 w-full sm:w-[75%]">
-                <div className="flex flex-col md:flex-row justify-between">
-                    <h5 className="text-[15px] font-bold">Wildan Nur Rahman</h5>
-                    <span className="text-[12px] opacity-55">29 MARET 2022 / 12:50 AM</span>
-                </div>
-              <p  className="text-[15px] leading-7">
+              <div className="flex flex-col md:flex-row justify-between">
+                <h5 className="text-[15px] font-bold">Wildan Nur Rahman</h5>
+                <span className="text-[12px] opacity-55">
+                  29 MARET 2022 / 12:50 AM
+                </span>
+              </div>
+              <p className="text-[15px] leading-7">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Morbi tristique senectus et netus. Semper quis lectus nulla at

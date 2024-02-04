@@ -6,12 +6,12 @@ import { Button } from "./comment-button";
 export default function CommentForm() {
   return (
     <form action="">
-      <div className="mt-5 p-3">
+      <div className="mt-5 p-3 lg:px-36">
         <h1 className="text-[18px] font-medium">Berikan komentar Anda</h1>
         <span className="text-[13px] opacity-55">
           Email anda tidak akan dipublikasikan
         </span>
-        <div className="grid grid-cols-9 gap-x-5 lg:gap-x-10 gap-y-5 mt-3 lg:px-36">
+        <div className="grid grid-cols-9 gap-x-5 lg:gap-x-10 gap-y-5 mt-3">
           <div className="sm:col-span-3 col-span-9">
             <div className="relative rounded-md mt-2">
               <div className="relative">
@@ -79,7 +79,9 @@ export default function CommentForm() {
               </div>
             </div>
           </div>
-          <Button type="submit" className="col-span-5 md:col-span-2">Kirim Komentar</Button>
+          <Button type="submit" className="col-span-5 md:col-span-2">
+            Kirim Komentar
+          </Button>
         </div>
       </div>
     </form>
