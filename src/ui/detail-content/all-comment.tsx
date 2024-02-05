@@ -6,14 +6,13 @@ type Props = {
   commentData: Comment[];
 };
 
-
 export default function Comments({ commentData }: Props) {
   return (
     <div className="mt-3 p-3">
       <h1 className="text-[18px] font-bold">Semua Komentar</h1>
       <div className="grid grid-cols-8 my-5 gap-10">
         {commentData?.map((comment) => {
-          return(
+          return (
             <div className="col-span-8" key={comment.id}>
               <div className="flex gap-3">
                 <div className="relative w-[65px] h-[65px] flex-shrink-0">
@@ -31,13 +30,11 @@ export default function Comments({ commentData }: Props) {
                       {comment.created_at}
                     </span>
                   </div>
-                  <p className="text-[15px] leading-7">
-                    {comment.message}
-                  </p>
+                  <p className="text-[15px] leading-7">{comment.message}</p>
                 </div>
               </div>
             </div>
-          )
+          );
         })}
       </div>
     </div>

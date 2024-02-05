@@ -69,7 +69,9 @@ export async function fetchPostsById(id: string): Promise<Post> {
   }
 }
 
-export async function fetchRelatedList(id_category: string): Promise<PopularList[]> {
+export async function fetchRelatedList(
+  id_category: string,
+): Promise<PopularList[]> {
   noStore();
   try {
     const data = await db.post.findMany({
@@ -84,7 +86,7 @@ export async function fetchRelatedList(id_category: string): Promise<PopularList
           select: {
             name: true,
           },
-        }
+        },
       },
       where: {
         id_category: id_category,
@@ -102,7 +104,6 @@ export async function fetchRelatedList(id_category: string): Promise<PopularList
     throw new Error("Database Error");
   }
 }
-
 
 export async function fetchPostsByType(
   type: "tutorial" | "article",

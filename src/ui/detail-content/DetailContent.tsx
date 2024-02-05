@@ -14,7 +14,12 @@ type Props = {
   comment: Comment[];
 };
 
-export default async function DetailContent({ detail, related, popularList, comment }: Props) {
+export default async function DetailContent({
+  detail,
+  related,
+  popularList,
+  comment,
+}: Props) {
   return (
     <section className="mb-5">
       <DetailContentHead
