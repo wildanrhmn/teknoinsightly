@@ -28,4 +28,4 @@ function formatDetailDate(datestring: string) {
   return format(date, "d MMMM yyyy / HH:mm");
 }
 
-export { formatDate, formatDetailDate }
+export { formatDate, formatDetailDate };

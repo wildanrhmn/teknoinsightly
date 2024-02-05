@@ -21,11 +21,11 @@ export default function TopArticles({ topArticlesData }: TopArticlesProps) {
               <div key={article.id} className="flex flex-col mb-[10px]">
                 <Link
                   href={pathDetail}
-                  className="text-[#203397] text-[17px] overflow-ellipsis overflow-y-hidden line-clamp-2"
+                  className="text-[#203397] text-[17px] overflow-ellipsis overflow-y-hidden line-clamp-1"
                 >
                   {article.title}
                 </Link>
-                <span className="text-dark text-opacity-50 text-[13px]">{`${article.created_at} oleh ${article.author.name}`}</span>
+                <span className="text-dark text-opacity-50 text-[13px]">{`Dibuat ${article.created_at} oleh ${article.author.name}`}</span>
               </div>
             );
           })}

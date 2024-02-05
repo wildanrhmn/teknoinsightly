@@ -28,7 +28,7 @@ export default function TopTutorials({ topTutorialData }: TopTutorialsProps) {
                 </div>
                 <Link
                   href={pathDetail}
-                  className="text-[#203397] text-[16px] overflow-ellipsis overflow-y-hidden line-clamp-2"
+                  className="text-[#203397] text-[16px] overflow-ellipsis overflow-y-hidden line-clamp-1"
                 >
                   {tutorial.title}
                 </Link>

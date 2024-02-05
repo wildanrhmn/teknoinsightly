@@ -1,17 +1,20 @@
 import DetailContentHead from "./detail-header";
 import RelatedContent from "./related-content";
+import TopArticles from "../content/top_article_aside";
 import CommentForm from "./comment-form";
 import Comments from "./all-comment";
 import Image from "next/image";
 
-import { PopularList, Post } from "@/lib/definiton/definition";
+import { Comment, PopularList, Post } from "@/lib/definiton/definition";
 
 type Props = {
   detail: Post;
-  related?: PopularList[];
+  related: PopularList[];
+  popularList: PopularList[];
+  comment: Comment[];
 };
 
-export default async function DetailContent({ detail, related }: Props) {
+export default async function DetailContent({ detail, related, popularList, comment }: Props) {
   return (
     <section className="mb-5">
       <DetailContentHead
@@ -21,23 +24,27 @@ export default async function DetailContent({ detail, related }: Props) {
         id={String(detail.id)}
       />
       <div className="container mx-auto mt-1 sm:mt-5">
-        <div className="grid grid-cols-8 p-3">
-          <div className="col-span-8 lg:col-span-6">
+        <div className="grid grid-cols-8 p-3 gap-10">
+          <div className="col-span-8 lg:col-span-5 xl:col-span-6">
             <div className="relative w-[100%] h-[200px] sm:h-[500px]">
               <Image src="/dummy_img4.png" alt="" fill />
             </div>
             <div className="mt-5">
-              <p className="text-[14px] sm:text-[15px] leading-7" dangerouslySetInnerHTML={{ __html: detail.body }} />
+              <p
+                className="text-[14px] sm:text-[15px] leading-7"
+                dangerouslySetInnerHTML={{ __html: detail.body }}
+              />
             </div>
           </div>
-          <div className="col-span-8 lg:col-span-2">
-            {/* <RelatedContent RelatedContent={related} /> */}
+          <div className="hidden lg:flex xl:col-span-2 lg:col-span-3 flex-col gap-10">
+            <RelatedContent contentData={related} />
+            <TopArticles topArticlesData={popularList} />
           </div>
         </div>
         <hr className="mt-3" />
         <CommentForm />
         <hr className="mt-3" />
-        <Comments />
+        <Comments commentData={comment} />
       </div>
     </section>
   );

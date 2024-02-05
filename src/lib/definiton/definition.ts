@@ -62,4 +62,4 @@ export type Comment = {
   email: string;
   website?: string;
   message: string;
-}
+};

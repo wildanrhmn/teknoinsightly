@@ -13,22 +13,21 @@ export default function RelatedContent({ contentData }: Props) {
         <h3 className="text-[24px] font-bold ml-[35px]">Konten Terkait</h3>
       </div>
       <div className="ps-[25px]">
-        {contentData
-          ?.map((content) => {
-            const path = content.type === "article" ? "/article" : "/tutorial";
-            const pathDetail = `${path}/${path.replace(/-/g, " ")}-detail/${content.id}`;
-            return (
-              <div key={content.id} className="flex flex-col mb-[10px]">
-                <Link
-                  href={pathDetail}
-                  className="text-[#203397] text-[17px] overflow-ellipsis overflow-y-hidden line-clamp-2"
-                >
-                  {content.title}
-                </Link>
-                <span className="text-dark text-opacity-50 text-[13px]">{`${content.created_at} oleh ${content.author.name}`}</span>
-              </div>
-            );
-          })}
+        {contentData?.map((content) => {
+          const path = content.type === "article" ? "/article" : "/tutorial";
+          const pathDetail = `${path}/${path.replace(/-/g, " ")}-detail/${content.id}`;
+          return (
+            <div key={content.id} className="flex flex-col mb-[10px]">
+              <Link
+                href={pathDetail}
+                className="text-[#203397] text-[17px] overflow-ellipsis overflow-y-hidden line-clamp-1"
+              >
+                {content.title}
+              </Link>
+              <span className="text-dark text-opacity-50 text-[13px]">{`Dibuat ${content.created_at} oleh ${content.author.name}`}</span>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

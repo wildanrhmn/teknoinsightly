@@ -1,13 +1,13 @@
 import DetailContent from "@/ui/detail-content/DetailContent";
-import { fetchComment, fetchPostsById } from "@/lib/data";
+import { fetchComment, fetchPostsById, fetchRelatedList, fetchAllPopularList } from "@/lib/data";
 
 export default async function Page({ params }: { params: { id: string } }) {
-  const [detail, comment] = await Promise.all([
+  const [detail, comment, popularList] = await Promise.all([
     fetchPostsById(params.id),
     fetchComment(params.id),
+    fetchAllPopularList(),
+  ]);
 
-  ]) 
-  return(
-    <DetailContent detail={detail} />
-  );
+  const related = await fetchRelatedList(detail.id_category);
+  return <DetailContent detail={detail} related={related} popularList={popularList} />;
 }
