@@ -13,7 +13,7 @@ export default function TopTutorials({ topTutorialData }: TopTutorialsProps) {
       <div className='flex items-center w-full h-[50px] flex-shrink-0 border-2 border-solid border-secondary relative rounded-[6px] mb-[7px] after:absolute after:w-[5%] after:h-full after:content-[" "] after:left-0 after:top-0 after:bg-secondary'>
         <h3 className="text-[24px] font-bold ml-[35px]">Tutorial Terbaru</h3>
       </div>
-      <div className="ps-[25px]">
+      <div className="ps-[10px]">
         {topTutorialData
           ?.filter((tutorial) => tutorial.type === "tutorial")
           .map((tutorial) => {
@@ -28,7 +28,7 @@ export default function TopTutorials({ topTutorialData }: TopTutorialsProps) {
                 </div>
                 <Link
                   href={pathDetail}
-                  className="text-[#203397] text-[16px] overflow-ellipsis overflow-y-hidden line-clamp-1"
+                  className="text-[#203397] text-[16px] overflow-ellipsis overflow-y-hidden line-clamp-2"
                 >
                   {tutorial.title}
                 </Link>

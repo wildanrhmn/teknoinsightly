@@ -4,6 +4,7 @@ import TopArticles from "../content/top_article_aside";
 import CommentForm from "./comment-form";
 import Comments from "./all-comment";
 import Image from "next/image";
+import AsideDetail from "./aside-wrapper";
 
 import { Comment, PopularList, Post } from "@/lib/definiton/definition";
 
@@ -42,8 +43,7 @@ export default async function DetailContent({
             </div>
           </div>
           <div className="hidden lg:flex xl:col-span-2 lg:col-span-3 flex-col gap-10">
-            <RelatedContent contentData={related} />
-            <TopArticles topArticlesData={popularList} />
+            <AsideDetail related={related} popularList={popularList} />
           </div>
         </div>
         <hr className="mt-3" />

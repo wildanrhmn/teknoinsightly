@@ -21,14 +21,12 @@ export async function contactFormAction(data: ContactForm) {
       error: "Database Error : Error dalam mengirimkan pesan",
     };
   }
-
-  revalidatePath("/contact-us");
 }
 
 export async function commentFormAction(data: any) {
   const { name, email, website, message, id_post } = data;
 
-  try{
+  try {
     await db.comment.create({
       data: {
         name,
@@ -36,8 +34,8 @@ export async function commentFormAction(data: any) {
         website,
         message,
         id_post,
-      }
-    })
+      },
+    });
   } catch (error) {
     return {
       error: "Database Error : Error dalam mengirimkan komentar",

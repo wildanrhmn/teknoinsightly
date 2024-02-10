@@ -21,6 +21,9 @@ export async function fetchAllPosts(): Promise<Post[]> {
           },
         },
       },
+      orderBy: {
+        created_at: "desc",
+      }
     });
 
     const formattedData = data.map((post: any) => {
@@ -70,7 +73,7 @@ export async function fetchPostsById(id: string): Promise<Post> {
 }
 
 export async function fetchRelatedList(
-  id_category: string
+  id_category: string,
 ): Promise<PopularList[]> {
   noStore();
   try {
@@ -92,6 +95,9 @@ export async function fetchRelatedList(
       where: {
         id_category: id_category,
       },
+      orderBy: {
+        created_at: "desc",
+      }
     });
     const formattedData = data
       .filter((related: any) => related.id_category !== id_category)
@@ -109,7 +115,7 @@ export async function fetchRelatedList(
 }
 
 export async function fetchPostsByType(
-  type: "tutorial" | "article"
+  type: "tutorial" | "article",
 ): Promise<Post[]> {
   noStore();
   try {
@@ -129,6 +135,9 @@ export async function fetchPostsByType(
           },
         },
       },
+      orderBy: {
+        created_at: "desc",
+      }
     });
 
     const formattedData = data.map((post: any) => {
@@ -146,7 +155,7 @@ export async function fetchPostsByType(
 
 export async function fetchPostsByCategory(
   category: string,
-  type: "tutorial" | "article"
+  type: "tutorial" | "article",
 ): Promise<Post[]> {
   noStore();
 
@@ -154,6 +163,7 @@ export async function fetchPostsByCategory(
     where: {
       slug: category,
     },
+    
   });
 
   if (!dataCategory) {
@@ -177,6 +187,9 @@ export async function fetchPostsByCategory(
           },
         },
       },
+      orderBy: {
+        created_at: "desc",
+      }
     });
     const formattedData = data.map((post: any) => {
       return {
@@ -202,6 +215,9 @@ export async function fetchAllPopularList(): Promise<PopularList[]> {
           },
         },
       },
+      orderBy: {
+        created_at: "desc",
+      }
     });
     const formattedData = data.map((post: any) => {
       return {
@@ -232,6 +248,9 @@ export async function fetchComment(id_post: string): Promise<Comment[]> {
       where: {
         id_post: id_post,
       },
+      orderBy: {
+        created_at: "desc",
+      }
     });
     const formattedData = data.map((data: any) => {
       return {

@@ -17,9 +17,9 @@ export const messageDataSchema = z.object({
   id_post: z.string(),
   name: z.string().min(1, { message: "Nama wajib diisi" }),
   email: z
-  .string()
-  .min(1, { message: "Email wajib diisi" })
-  .email({ message: "Email tidak valid" }),
+    .string()
+    .min(1, { message: "Email wajib diisi" })
+    .email({ message: "Email tidak valid" }),
   website: z.string().nullable(),
   message: z.string().min(1, { message: "Komentar wajib diisi" }),
-})
+});
