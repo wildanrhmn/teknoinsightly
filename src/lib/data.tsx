@@ -70,7 +70,7 @@ export async function fetchPostsById(id: string): Promise<Post> {
 }
 
 export async function fetchRelatedList(
-  id_category: string,
+  id_category: string
 ): Promise<PopularList[]> {
   noStore();
   try {
@@ -82,6 +82,7 @@ export async function fetchRelatedList(
         created_at: true,
         type: true,
         image: true,
+        id_category: true,
         author: {
           select: {
             name: true,
@@ -92,12 +93,14 @@ export async function fetchRelatedList(
         id_category: id_category,
       },
     });
-    const formattedData = data.map((post: any) => {
-      return {
-        ...post,
-        created_at: formatDate(post.created_at),
-      };
-    });
+    const formattedData = data
+      .filter((related: any) => related.id_category !== id_category)
+      .map((post: any) => {
+        return {
+          ...post,
+          created_at: formatDate(post.created_at),
+        };
+      });
     return formattedData;
   } catch (error) {
     console.log("Database Error: ", error);
@@ -106,7 +109,7 @@ export async function fetchRelatedList(
 }
 
 export async function fetchPostsByType(
-  type: "tutorial" | "article",
+  type: "tutorial" | "article"
 ): Promise<Post[]> {
   noStore();
   try {
@@ -143,7 +146,7 @@ export async function fetchPostsByType(
 
 export async function fetchPostsByCategory(
   category: string,
-  type: "tutorial" | "article",
+  type: "tutorial" | "article"
 ): Promise<Post[]> {
   noStore();
 

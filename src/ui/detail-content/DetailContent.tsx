@@ -47,7 +47,7 @@ export default async function DetailContent({
           </div>
         </div>
         <hr className="mt-3" />
-        <CommentForm />
+        <CommentForm id_post={String(detail.id)} />
         <hr className="mt-3" />
         <Comments commentData={comment} />
       </div>

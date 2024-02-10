@@ -62,7 +62,7 @@ model Contacted {
 model Comment {
   id      String  @id @default(cuid())
   name    String
-  created_at String
+  created_at DateTime  @default(now())
   email   String
   website String?
   message String
