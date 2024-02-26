@@ -23,7 +23,7 @@ export async function fetchAllPosts(): Promise<Post[]> {
       },
       orderBy: {
         created_at: "desc",
-      }
+      },
     });
 
     const formattedData = data.map((post: any) => {
@@ -97,7 +97,7 @@ export async function fetchRelatedList(
       },
       orderBy: {
         created_at: "desc",
-      }
+      },
     });
     const formattedData = data
       .filter((related: any) => related.id_category !== id_category)
@@ -137,7 +137,7 @@ export async function fetchPostsByType(
       },
       orderBy: {
         created_at: "desc",
-      }
+      },
     });
 
     const formattedData = data.map((post: any) => {
@@ -154,26 +154,15 @@ export async function fetchPostsByType(
 }
 
 export async function fetchPostsByCategory(
-  category: string,
-  type: "tutorial" | "article",
+  category: string
 ): Promise<Post[]> {
   noStore();
-
-  const dataCategory = await db.category.findUnique({
-    where: {
-      slug: category,
-    },
-    
-  });
-
-  if (!dataCategory) {
-    return [];
-  }
   try {
     const data = await db.post.findMany({
       where: {
-        type: type,
-        id_category: dataCategory.id,
+        category: {
+          slug: category,
+        },
       },
       include: {
         category: {
@@ -189,7 +178,7 @@ export async function fetchPostsByCategory(
       },
       orderBy: {
         created_at: "desc",
-      }
+      },
     });
     const formattedData = data.map((post: any) => {
       return {
@@ -217,7 +206,7 @@ export async function fetchAllPopularList(): Promise<PopularList[]> {
       },
       orderBy: {
         created_at: "desc",
-      }
+      },
     });
     const formattedData = data.map((post: any) => {
       return {
@@ -232,9 +221,16 @@ export async function fetchAllPopularList(): Promise<PopularList[]> {
   }
 }
 
-export async function fetchCategories(): Promise<Category[]> {
+export async function fetchCategories(type: "article" | "tutorial"): Promise<Category[]> {
   try {
-    const data = await db.category.findMany();
+    const data = await db.category.findMany({
+      where: {
+        type: type,
+      },
+      orderBy: {
+        name: "asc",
+      },
+    });
     return data;
   } catch (error) {
     console.log("Database Error: ", error);
@@ -250,7 +246,7 @@ export async function fetchComment(id_post: string): Promise<Comment[]> {
       },
       orderBy: {
         created_at: "desc",
-      }
+      },
     });
     const formattedData = data.map((data: any) => {
       return {

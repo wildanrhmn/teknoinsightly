@@ -17,7 +17,7 @@ export default function Page() {
           </div>
           <div className="bg-primary shadow-md rounded-md p-6 md:p-10">
             <div className="flex flex-col gap-1 mb-10">
-              <h1 className="text-[28px] font-bold">Hubungi Kami!</h1>
+              <h1 className="text-[28px] font-bold text-dark">Hubungi Kami!</h1>
               <span className="text-[14px] text-red-600">
                 (*) berarti field wajib diisi.
               </span>

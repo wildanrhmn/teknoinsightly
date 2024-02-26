@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { Icon } from "@iconify/react";
 import Breadcrumbs from "@/utils/breadcrumbs";
 
-export default function ContentBreadcrumbs({ params }: { params?: string }) {
+export default function ContentBreadcrumbs({ params } : { params?: string }) {
   const pathname = usePathname();
   return (
     <div className="bg-primary shadow-md p-[10px] mb-[15px] flex gap-[7px] items-center">
@@ -54,7 +54,7 @@ export default function ContentBreadcrumbs({ params }: { params?: string }) {
             },
           ]}
         />
-      ) : pathname === `/articles/article-detail/${params}` ? (
+      ) : pathname === `/articles/article-detail/$${params}` ? (
         <Breadcrumbs
           breadcrumbs={[
             { label: "Artikel", href: "/article" },

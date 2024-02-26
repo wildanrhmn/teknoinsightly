@@ -9,6 +9,7 @@ import {
 function formatDate(datestring: string) {
   const date = new Date(datestring);
   const today = new Date();
+  
 
   if (isToday(date)) {
     return "Hari ini";

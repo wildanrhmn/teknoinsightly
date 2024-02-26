@@ -16,7 +16,7 @@ export default function DetailContentHead({
 }) {
   const pathname = usePathname();
   return (
-    <div className="w-full bg-[#D9D9D9] bg-opacity-20 p-6 sm:p-14">
+    <div className="w-full bg-[#D9D9D9] bg-opacity-20 p-6 sm:p-14 text-dark">
       <div className="flex flex-col gap-5 items-center justify-center">
         {pathname.includes("article") ? (
           <Breadcrumbs

@@ -8,7 +8,7 @@ type Props = {
 
 export default function Comments({ commentData }: Props) {
   return (
-    <div className="mt-3 p-3">
+    <div className="mt-3 p-3 text-dark">
       <h1 className="text-[18px] font-bold">Semua Komentar</h1>
       <div className="grid grid-cols-8 my-5 gap-1">
         {commentData?.map((comment) => {
@@ -33,7 +33,7 @@ export default function Comments({ commentData }: Props) {
                   <p className="text-[15px] leading-7">{comment.message}</p>
                 </div>
               </div>
-              <hr className="my-3"/>
+              <hr className="my-3" />
             </div>
           );
         })}

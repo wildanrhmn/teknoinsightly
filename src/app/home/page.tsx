@@ -1,17 +1,16 @@
-import SwiperCarousel from "@/ui/swiper/Swiper";
+import Swiper from "@/ui/swiper/SwiperWrapper";
 import Content from "@/ui/content/Content";
 
-import { fetchAllPosts, fetchAllPopularList } from "@/lib/data";
+import { Suspense } from "react";
+import { SwiperSkeleton } from "@/ui/skeletons";
 
 export default async function Home() {
-  const [posts, sidebarData] = await Promise.all([
-    fetchAllPosts(),
-    fetchAllPopularList(),
-  ]);
   return (
-    <div>
-      <SwiperCarousel />
-      <Content posts={posts} sidebarData={sidebarData} />
-    </div>
+    <>
+    <Suspense fallback={<SwiperSkeleton />}>
+      <Swiper />
+    </Suspense>
+      <Content />
+    </>
   );
 }

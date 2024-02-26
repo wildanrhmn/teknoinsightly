@@ -47,8 +47,8 @@ export default function CommentForm({ id_post }: { id_post: string }) {
   };
   return (
     <form onSubmit={handleSubmit(processForm)}>
-      <div className="mt-5 p-3 lg:px-36">
-        <h1 className="text-[18px] font-medium">Berikan komentar Anda</h1>
+      <div className="mt-5 p-3 lg:px-36 text-dark">
+        <h1 className="text-[18px] font-medium ">Berikan komentar Anda</h1>
         <span className="text-[13px] opacity-55">
           Email anda tidak akan dipublikasikan
         </span>

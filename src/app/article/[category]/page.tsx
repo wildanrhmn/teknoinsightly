@@ -9,18 +9,7 @@ export default async function Page({
 }: {
   params: { category: string };
 }) {
-  const category = params.category;
-  const [posts, sidebarData, categories] = await Promise.all([
-    fetchPostsByCategory(category, "article"),
-    fetchAllPopularList(),
-    fetchCategories(),
-  ]);
   return (
-    <Content
-      posts={posts}
-      sidebarData={sidebarData}
-      categories={categories}
-      params={category}
-    />
+    <Content params={params} />
   );
 }
