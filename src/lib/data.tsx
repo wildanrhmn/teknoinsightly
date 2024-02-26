@@ -115,7 +115,7 @@ export async function fetchRelatedList(
 }
 
 export async function fetchPostsByType(
-  type: "tutorial" | "article",
+  type: string,
 ): Promise<Post[]> {
   noStore();
   try {
@@ -153,9 +153,7 @@ export async function fetchPostsByType(
   }
 }
 
-export async function fetchPostsByCategory(
-  category: string
-): Promise<Post[]> {
+export async function fetchPostsByCategory(category: string): Promise<Post[]> {
   noStore();
   try {
     const data = await db.post.findMany({
@@ -221,7 +219,9 @@ export async function fetchAllPopularList(): Promise<PopularList[]> {
   }
 }
 
-export async function fetchCategories(type: "article" | "tutorial"): Promise<Category[]> {
+export async function fetchCategories(
+  type: "article" | "tutorial",
+): Promise<Category[]> {
   try {
     const data = await db.category.findMany({
       where: {

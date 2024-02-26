@@ -2,24 +2,27 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Post } from "@/lib/definiton/definition";
-import { fetchAllPosts, fetchPostsByCategory } from "@/lib/data";
+import { fetchAllPosts, fetchPostsByCategory, fetchPostsByType } from "@/lib/data";
 
 export type ContentCardProps = {
   posts: Post[];
 };
 
-async function fetchPosts(category: string | undefined) {
-  if(category){
+async function fetchPosts(category: string | undefined, type?: string) {
+  if (category) {
     const data = await fetchPostsByCategory(category);
-    return data
-  } else {
-    const data = await fetchAllPosts();
-    return data
+    return data;
   }
+  if(type) {
+    const data = await fetchPostsByType(type);
+    return data;
+  }
+  const data = await fetchAllPosts();
+  return data;
 }
 
-export default async function ContentCard({ category } : { category? : string }) {
-  const posts = await fetchPosts(category);
+export default async function ContentCard({ category, type }: { category?: string, type?: string }) {
+  const posts = await fetchPosts(category, type);
   return (
     <>
       {posts.map((post, index) => {

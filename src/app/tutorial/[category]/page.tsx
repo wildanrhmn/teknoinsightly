@@ -4,7 +4,5 @@ export default async function Page({
 }: {
   params: { category: string };
 }) {
-  return (
-    <Content params={params} />
-  );
+  return <Content params={params} />;
 }

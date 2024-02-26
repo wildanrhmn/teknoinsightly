@@ -7,9 +7,9 @@ import { SwiperSkeleton } from "@/ui/skeletons";
 export default async function Home() {
   return (
     <>
-    <Suspense fallback={<SwiperSkeleton />}>
-      <Swiper />
-    </Suspense>
+      <Suspense fallback={<SwiperSkeleton />}>
+        <Swiper />
+      </Suspense>
       <Content />
     </>
   );

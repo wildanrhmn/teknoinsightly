@@ -25,8 +25,8 @@ const config: Config = {
         },
       },
       shimmer: {
-        '100%': {
-          transform: 'translateX(100%)',
+        "100%": {
+          transform: "translateX(100%)",
         },
       },
     },

@@ -11,10 +11,7 @@ type Props = {
   comment: Comment[];
 };
 
-export default async function DetailContent({
-  detail,
-  comment,
-}: Props) {
+export default async function DetailContent({ detail, comment }: Props) {
   return (
     <section className="mb-5">
       <DetailContentHead

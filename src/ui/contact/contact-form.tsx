@@ -61,7 +61,10 @@ export default function Form() {
       <div className="grid grid-cols-2 gap-3">
         {/* First name */}
         <div className="mb-2 md:mb-4 col-span-2 md:col-span-1">
-          <label htmlFor="firstName" className="block text-sm font-medium text-dark">
+          <label
+            htmlFor="firstName"
+            className="block text-sm font-medium text-dark"
+          >
             Nama depan <span className="text-red-500">*</span>
           </label>
           <div className="relative rounded-md mt-2">
@@ -92,7 +95,10 @@ export default function Form() {
         </div>
         {/* Last name */}
         <div className="mb-2 md:mb-4 col-span-2 md:col-span-1">
-          <label htmlFor="lastName" className="block text-sm font-medium text-dark">
+          <label
+            htmlFor="lastName"
+            className="block text-sm font-medium text-dark"
+          >
             Nama Belakang
           </label>
           <div className="relative rounded-md mt-2">
@@ -123,7 +129,10 @@ export default function Form() {
         </div>
         {/* Email */}
         <div className="mb-2 md:mb-4 col-span-2 md:col-span-1">
-          <label htmlFor="email" className="block text-sm font-medium text-dark">
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-dark"
+          >
             Email <span className="text-red-500">*</span>
           </label>
           <div className="relative rounded-md mt-2">
@@ -154,7 +163,10 @@ export default function Form() {
         </div>
         {/* Organisasi */}
         <div className="mb-2 md:mb-4 col-span-2 md:col-span-1">
-          <label htmlFor="organization" className="block text-sm font-medium text-dark">
+          <label
+            htmlFor="organization"
+            className="block text-sm font-medium text-dark"
+          >
             Organisasi
           </label>
           <div className="relative rounded-md mt-2">
@@ -185,7 +197,10 @@ export default function Form() {
         </div>
         {/* Message */}
         <div className="mb-2 md:mb-4 col-span-2">
-          <label htmlFor="message" className="block text-sm font-medium text-dark">
+          <label
+            htmlFor="message"
+            className="block text-sm font-medium text-dark"
+          >
             Pesan <span className="text-red-500">*</span>
           </label>
           <div className="relative rounded-md mt-2">

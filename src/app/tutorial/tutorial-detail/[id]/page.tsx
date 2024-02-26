@@ -1,8 +1,5 @@
 import DetailContent from "@/ui/detail-content/DetailContent";
-import {
-  fetchComment,
-  fetchPostsById,
-} from "@/lib/data";
+import { fetchComment, fetchPostsById } from "@/lib/data";
 
 export default async function Page({ params }: { params: { id: string } }) {
   const [detail, comment] = await Promise.all([
@@ -10,10 +7,5 @@ export default async function Page({ params }: { params: { id: string } }) {
     fetchComment(params.id),
   ]);
 
-  return (
-    <DetailContent
-      comment={comment}
-      detail={detail}
-    />
-  );
+  return <DetailContent comment={comment} detail={detail} />;
 }
