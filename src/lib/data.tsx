@@ -4,9 +4,10 @@ import { Category, Post, PopularList, Comment } from "./definiton/definition";
 import { unstable_noStore as noStore } from "next/cache";
 import { formatDate, formatDetailDate } from "@/utils/date-formatter";
 
-export async function fetchAllPosts(): Promise<Post[]> {
+const ITEMS_PER_PAGE = 6;
+export async function fetchAllPosts(currentPage: number = 1): Promise<Post[]> {
   noStore();
-
+  const offset = (currentPage - 1) * ITEMS_PER_PAGE;
   try {
     const data = await db.post.findMany({
       include: {
@@ -24,6 +25,8 @@ export async function fetchAllPosts(): Promise<Post[]> {
       orderBy: {
         created_at: "desc",
       },
+      take: ITEMS_PER_PAGE,
+      skip: offset,
     });
 
     const formattedData = data.map((post: any) => {
@@ -39,6 +42,37 @@ export async function fetchAllPosts(): Promise<Post[]> {
     throw new Error("Database Error");
   }
 }
+
+export async function fetchAllPages({
+  type,
+  category,
+}: {
+  type?: string;
+  category?: string;
+}): Promise<number> {
+  noStore();
+  try {
+    const whereClause: any = {};
+
+    if (type) {
+      whereClause.OR = [{ type: type }];
+    }
+    if (category) {
+      whereClause.OR = [{ category: { slug: category } }];
+    }
+
+    const data = await db.post.count({
+      where: whereClause,
+    });
+
+    const totalPages = Math.ceil(Number(data) / ITEMS_PER_PAGE);
+    return totalPages;
+  } catch (error) {
+    console.log("Database Error: ", error);
+    throw new Error("Database Error");
+  }
+}
+
 export async function fetchPostsById(id: string): Promise<Post> {
   noStore();
   try {
@@ -116,8 +150,11 @@ export async function fetchRelatedList(
 
 export async function fetchPostsByType(
   type: string,
+  currentPage: number = 1,
 ): Promise<Post[]> {
   noStore();
+
+  const offset = (currentPage - 1) * ITEMS_PER_PAGE;
   try {
     const data = await db.post.findMany({
       where: {
@@ -138,6 +175,8 @@ export async function fetchPostsByType(
       orderBy: {
         created_at: "desc",
       },
+      take: ITEMS_PER_PAGE,
+      skip: offset,
     });
 
     const formattedData = data.map((post: any) => {
@@ -153,8 +192,13 @@ export async function fetchPostsByType(
   }
 }
 
-export async function fetchPostsByCategory(category: string): Promise<Post[]> {
+export async function fetchPostsByCategory(
+  category: string,
+  currentPage: number = 1,
+): Promise<Post[]> {
   noStore();
+
+  const offset = (currentPage - 1) * ITEMS_PER_PAGE;
   try {
     const data = await db.post.findMany({
       where: {
@@ -177,6 +221,8 @@ export async function fetchPostsByCategory(category: string): Promise<Post[]> {
       orderBy: {
         created_at: "desc",
       },
+      take: ITEMS_PER_PAGE,
+      skip: offset,
     });
     const formattedData = data.map((post: any) => {
       return {

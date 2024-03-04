@@ -1,5 +1,21 @@
 import Content from "@/ui/content/Content";
 
-export default async function Page() {
-  return <Content type="article"/>
+import { fetchAllPages } from "@/lib/data";
+
+export default async function Page({
+  searchParams,
+}: {
+  searchParams?: {
+    query?: string;
+    page?: string;
+  };
+}) {
+  const query = searchParams?.query;
+  const currentPage = Number(searchParams?.page) || 1;
+
+  const totalPages = await fetchAllPages({ type: "article" });
+
+  return (
+    <Content type="article" currentPage={currentPage} totalPages={totalPages} />
+  );
 }

@@ -2,34 +2,50 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Post } from "@/lib/definiton/definition";
-import { fetchAllPosts, fetchPostsByCategory, fetchPostsByType } from "@/lib/data";
+import {
+  fetchAllPosts,
+  fetchPostsByCategory,
+  fetchPostsByType,
+} from "@/lib/data";
 
 export type ContentCardProps = {
   posts: Post[];
 };
-
-async function fetchPosts(category: string | undefined, type?: string) {
+async function fetchPosts(
+  currentPage: number,
+  category: string | undefined,
+  type?: string,
+) {
+  // function body remains the same
   if (category) {
-    const data = await fetchPostsByCategory(category);
+    const data = await fetchPostsByCategory(category, currentPage);
     return data;
   }
-  if(type) {
-    const data = await fetchPostsByType(type);
+  if (type) {
+    const data = await fetchPostsByType(type, currentPage);
     return data;
   }
-  const data = await fetchAllPosts();
+  const data = await fetchAllPosts(currentPage);
   return data;
 }
 
-export default async function ContentCard({ category, type }: { category?: string, type?: string }) {
-  const posts = await fetchPosts(category, type);
+export default async function ContentCard({
+  category,
+  type,
+  currentPage,
+}: {
+  category?: string;
+  type?: string;
+  currentPage: number;
+}) {
+  const posts = await fetchPosts(currentPage, category, type);
   return (
     <>
       {posts.map((post, index) => {
         const path = post.type === "article" ? "/article" : "/tutorial";
         const pathDetail = `${path}/${path}-detail/${post.id}`;
         return (
-          <div key={index}>
+          <div key={index} className="mt-3">
             <div className="flex flex-col">
               <Link
                 href={pathDetail}

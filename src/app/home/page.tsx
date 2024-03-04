@@ -4,13 +4,25 @@ import Content from "@/ui/content/Content";
 import { Suspense } from "react";
 import { SwiperSkeleton } from "@/ui/skeletons";
 
-export default async function Home() {
+import { fetchAllPages } from "@/lib/data";
+
+export default async function Page({
+  searchParams,
+}: {
+  searchParams?: {
+    query?: string;
+    page?: string;
+  };
+}) {
+  const currentPage = Number(searchParams?.page) || 1;
+
+  const totalPages = await fetchAllPages({ type: "" });
   return (
     <>
       <Suspense fallback={<SwiperSkeleton />}>
         <Swiper />
       </Suspense>
-      <Content />
+      <Content currentPage={currentPage} totalPages={totalPages} />
     </>
   );
 }

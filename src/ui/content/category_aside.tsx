@@ -1,5 +1,4 @@
 import { Category } from "@/lib/definiton/definition";
-import { fetchCategories } from "@/lib/data";
 
 import Link from "next/link";
 
@@ -15,7 +14,7 @@ export async function ArticleCategories({
           Kategori Artikel
         </h3>
       </div>
-      <div className="ps-[25px] flex flex-wrap gap-5 mt-5 ">
+      <div className="ps-[25px] flex flex-wrap gap-3 mt-3">
         {categories?.map((category) => {
           const pathDetail = `${category.type}/${category.slug}`;
           return (
@@ -46,7 +45,7 @@ export async function TutorialCategories({
           Kategori Tutorial
         </h3>
       </div>
-      <div className="ps-[25px] flex flex-wrap gap-5 mt-5 ">
+      <div className="ps-[25px] flex flex-wrap gap-3 mt-3">
         {categories?.map((category) => {
           const pathDetail = `${category.type}/${category.slug}`;
           return (
