@@ -16,7 +16,7 @@ model Post {
   type        String
   body        String
   summary     String    @default("")
-  id_category String    @unique
+  id_category String    
   id_author   String
   comments    Comment[]
   author      Author    @relation(fields: [id_author], references: [id])
@@ -28,7 +28,7 @@ model Category {
   name  String
   slug  String @unique
   type  String
-  posts Post?
+  posts Post[]
 }
 
 model PopularPost {

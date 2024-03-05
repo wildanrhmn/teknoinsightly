@@ -91,15 +91,15 @@ export default function Footer() {
           <div className="flex flex-col items-center">
             <Image
               src={"/logo.webp"}
-              alt="TeknoInsight Logo"
+              alt="TeknoInsightly Logo"
               width={150}
               height={150}
             />
             <h3 className="text-secondary italic text-[24px] font-extrabold">
-              TeknoInsight
+              TeknoInsightly
             </h3>
             <span className="text-primary italic text-[14px]">
-              © 2024 TeknoInsight
+              © 2024 TeknoInsightly
             </span>
           </div>
         </div>

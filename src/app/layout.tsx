@@ -11,11 +11,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "TeknoInsight - Your Most Reliable Technology Blog",
-    template: "%s | TeknoInsight",
+    default: "TeknoInsightly - Your Most Reliable Technology Blog",
+    template: "%s | TeknoInsightly",
   },
   description:
-    "Find the latest articles, and tutorials of technology on TeknoInsight!",
+    "Find the latest articles, and tutorials of technology on TeknoInsightly!",
   twitter: {
     card: "summary_large_image",
   },

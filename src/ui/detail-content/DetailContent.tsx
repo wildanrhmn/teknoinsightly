@@ -3,8 +3,6 @@ import CommentForm from "./comment-form";
 import Comments from "./all-comment";
 import Image from "next/image";
 import AsideWrapper from "../content/aside_wrapper";
-
-import { Comment, Post } from "@/lib/definiton/definition";
 import { fetchComment, fetchPostsById } from "@/lib/data";
 
 export default async function DetailContent({

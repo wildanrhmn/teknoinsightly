@@ -3,7 +3,6 @@ import ContentCard from "./content_card";
 import { Suspense } from "react";
 import { ContentSkeletons, AsideBarSkeleton } from "../skeletons";
 import AsideWrapper from "./aside_wrapper";
-import Pagination from "@/ui/paginations";
 export default async function Content({
   params,
   type,

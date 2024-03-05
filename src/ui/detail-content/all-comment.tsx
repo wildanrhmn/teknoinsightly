@@ -15,13 +15,8 @@ export default function Comments({ commentData }: Props) {
           return (
             <div className="col-span-8" key={comment.id}>
               <div className="flex gap-3">
-                <div className="relative w-[65px] h-[65px] flex-shrink-0">
-                  <Image
-                    src="/dummy_img4.png"
-                    alt=""
-                    fill
-                    className="rounded-full"
-                  />
+                <div className="w-[65px] h-[65px] flex-shrink-0 flex justify-center items-center rounded-full bg-[#D9D9D9] font-bold text-[18px]">
+                  {comment.name.charAt(0).toUpperCase()}
                 </div>
                 <div className="flex flex-col sm:gap-1 gap-3 w-full sm:w-[75%]">
                   <div className="flex flex-col md:flex-row justify-between">

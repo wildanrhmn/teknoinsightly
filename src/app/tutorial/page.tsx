@@ -6,7 +6,7 @@ import { fetchAllPages } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Tutorial",
   description:
-    "Find the latest tutorials of hardware and software on TeknoInsight!",
+    "Find the latest tutorials of hardware and software on TeknoInsightly!",
 };
 
 export default async function Page({

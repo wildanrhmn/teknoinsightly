@@ -4,10 +4,9 @@ import { Icon } from "@iconify/react";
 import { useState, useRef, useEffect } from "react";
 import clsx from "clsx";
 
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function SearchButton() {
-  const router = useRouter();
   const [isOpened, setIsOpened] = useState<boolean>(false);
   const divRef = useRef<HTMLDivElement>(null);
   const [searchTerm, setSearchTerm] = useState<string>("");
@@ -23,10 +22,6 @@ export default function SearchButton() {
       window.removeEventListener("mousedown", handleClickOutside);
     };
   }, [divRef]);
-
-  function handleSearch() {
-    router.push(`/search/${searchTerm}`);
-  }
 
   return (
     <div className="relative" ref={divRef}>
@@ -50,12 +45,12 @@ export default function SearchButton() {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <button
+        <Link
           className="rounded-[16px] bg-secondary text-primary px-[15px] w-[120px] h-[34px] font-medium text-[14px]"
-          onClick={handleSearch}
+          href={`/search/${searchTerm}`}
         >
           Cari
-        </button>
+        </Link>
       </div>
     </div>
   );

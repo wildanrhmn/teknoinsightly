@@ -15,7 +15,7 @@ export default function Header() {
               src="/logo.webp"
               width={65}
               height={65}
-              alt="TeknoInsight Logo"
+              alt="TeknoInsightly Logo"
             />
           </div>
           <div className="hidden lg:flex items-center gap-[55px]">
