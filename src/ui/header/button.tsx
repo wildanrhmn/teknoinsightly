@@ -4,9 +4,13 @@ import { Icon } from "@iconify/react";
 import { useState, useRef, useEffect } from "react";
 import clsx from "clsx";
 
+import { useRouter } from "next/navigation";
+
 export default function SearchButton() {
+  const router = useRouter();
   const [isOpened, setIsOpened] = useState<boolean>(false);
   const divRef = useRef<HTMLDivElement>(null);
+  const [searchTerm, setSearchTerm] = useState<string>("");
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -19,6 +23,10 @@ export default function SearchButton() {
       window.removeEventListener("mousedown", handleClickOutside);
     };
   }, [divRef]);
+
+  function handleSearch() {
+    router.push(`/search/${searchTerm}`);
+  }
 
   return (
     <div className="relative" ref={divRef}>
@@ -38,8 +46,14 @@ export default function SearchButton() {
         <input
           type="text"
           className="w-full h-[33px] rounded-[16px] bg-primary outline-none border-none text-[13px] px-5 focus:border-solid focus:border-secondary focus:border-2"
+          placeholder="Cari..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <button className="rounded-[16px] bg-secondary text-primary px-[15px] w-[120px] h-[34px] font-medium text-[14px]">
+        <button
+          className="rounded-[16px] bg-secondary text-primary px-[15px] w-[120px] h-[34px] font-medium text-[14px]"
+          onClick={handleSearch}
+        >
           Cari
         </button>
       </div>

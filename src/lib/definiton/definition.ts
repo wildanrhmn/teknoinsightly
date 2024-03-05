@@ -13,7 +13,8 @@ export type Post = {
   };
   body: string;
   type: string;
-  image?: string;
+  image: string;
+  summary: string;
 };
 
 export type PopularList = {
@@ -24,7 +25,7 @@ export type PopularList = {
   author: {
     name: string;
   };
-  image?: string;
+  image: string;
   type: string;
 };
 

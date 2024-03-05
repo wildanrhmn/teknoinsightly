@@ -1,5 +1,11 @@
+import { Metadata } from "next";
+
 import Form from "@/ui/contact/contact-form";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+};
 
 export default function Page() {
   return (

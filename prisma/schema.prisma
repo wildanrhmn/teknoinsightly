@@ -15,6 +15,7 @@ model Post {
   image       String?
   type        String
   body        String
+  summary     String    @default("")
   id_category String    @unique
   id_author   String
   comments    Comment[]

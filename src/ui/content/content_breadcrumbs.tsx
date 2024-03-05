@@ -5,10 +5,16 @@ import { usePathname } from "next/navigation";
 import { Icon } from "@iconify/react";
 import Breadcrumbs from "@/utils/breadcrumbs";
 
-export default function ContentBreadcrumbs({ params }: { params?: string }) {
+export default function ContentBreadcrumbs({
+  params,
+  term,
+}: {
+  params?: string;
+  term?: string;
+}) {
   const pathname = usePathname();
   return (
-    <div className="bg-primary shadow-md p-[10px] mb-[15px] flex gap-[7px] items-center">
+    <div className="bg-primary shadow-md p-[10px] flex gap-[7px] items-center">
       <Icon
         icon="iconamoon:home"
         color="#2aa8da"
@@ -54,24 +60,13 @@ export default function ContentBreadcrumbs({ params }: { params?: string }) {
             },
           ]}
         />
-      ) : pathname === `/articles/article-detail/$${params}` ? (
+      ) : pathname === `/search/${term}` ? (
         <Breadcrumbs
           breadcrumbs={[
-            { label: "Artikel", href: "/article" },
+            { label: "Search", href: "/home" },
             {
-              label: "Detail Artikel",
-              href: `/article/article-detail/${params}`,
-              active: true,
-            },
-          ]}
-        />
-      ) : pathname === `tutorials/tutorial-detail/${params}` ? (
-        <Breadcrumbs
-          breadcrumbs={[
-            { label: "Tutorial", href: "/tutorial" },
-            {
-              label: "Detail Tutorial",
-              href: `/tutorial/tutorial-detail/${params}`,
+              label: `Hasil pencarian pada ${term}`,
+              href: `/search/${term}}`,
               active: true,
             },
           ]}

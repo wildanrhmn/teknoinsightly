@@ -10,6 +10,7 @@ export default async function Page({
   searchParams,
 }: {
   searchParams?: {
+    sortBy?: string;
     query?: string;
     page?: string;
   };

@@ -45,7 +45,7 @@ export default function DetailContentHead({
         )}
         <div className="flex flex-col items-center gap-1 text-center">
           <h1 className="sm:text-[28px] text-[24px] font-extrabold">{title}</h1>
-          <span className="text-[13px] opacity-55">
+          <span className="text-[13px]">
             {`Dipublish pada ${date} oleh ${author}`}
           </span>
         </div>

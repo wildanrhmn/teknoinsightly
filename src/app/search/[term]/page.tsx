@@ -2,29 +2,28 @@ import Content from "@/ui/content/Content";
 import { fetchAllPages } from "@/lib/data";
 
 import { Metadata } from "next";
+
 export async function generateMetadata({
   params,
 }: {
-  params: { category: string };
+  params: { term: string };
 }): Promise<Metadata> {
   return {
-    title: `${params.category.charAt(0).toUpperCase() + params.category.slice(1)}`,
-    description: `List of the latest post about category ${params.category.charAt(0).toUpperCase() + params.category.slice(1)}`,
+    title: `Search - ${params.term}`,
+    description: `List of the latest post about ${params.term}`,
   };
 }
+
 export default async function Page({
   params,
 }: {
   params?: {
-    category: string;
     page?: string;
-    query?: string;
+    term?: string;
   };
 }) {
-  const query = params?.query;
   const currentPage = Number(params?.page) || 1;
-  const totalPages = await fetchAllPages({ category: params?.category });
-
+  const totalPages = await fetchAllPages({ query: params?.term });
   return (
     <Content
       params={params}

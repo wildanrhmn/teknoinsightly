@@ -1,5 +1,18 @@
 import Content from "@/ui/content/Content";
 import { fetchAllPages } from "@/lib/data";
+
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { category: string };
+}): Promise<Metadata> {
+  return {
+    title: `${params.category.charAt(0).toUpperCase() + params.category.slice(1)}`,
+    description: `List of the latest post about category ${params.category.charAt(0).toUpperCase() + params.category.slice(1)}`,
+  };
+}
 export default async function Page({
   params,
 }: {

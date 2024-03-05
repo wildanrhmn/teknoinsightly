@@ -27,7 +27,12 @@ export default async function TopTutorials({
                 className="flex items-center mb-[10px] gap-3"
               >
                 <div className="relative w-[47px] h-[47px] flex-shrink-0">
-                  <Image src="/dummy_img3.png" alt={tutorial.title} fill />
+                  <Image
+                    src={tutorial.image}
+                    alt={tutorial.title}
+                    fill
+                    style={{ objectFit: "cover" }}
+                  />
                 </div>
                 <Link
                   href={pathDetail}

@@ -1,12 +1,13 @@
 import { db } from "../../prisma/db.server";
 
 import { Category, Post, PopularList, Comment } from "./definiton/definition";
-import { unstable_noStore as noStore } from "next/cache";
 import { formatDate, formatDetailDate } from "@/utils/date-formatter";
 
 const ITEMS_PER_PAGE = 6;
-export async function fetchAllPosts(currentPage: number = 1): Promise<Post[]> {
-  noStore();
+export async function fetchAllPosts(
+  currentPage: number = 1,
+  query?: string,
+): Promise<Post[]> {
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
   try {
     const data = await db.post.findMany({
@@ -22,6 +23,7 @@ export async function fetchAllPosts(currentPage: number = 1): Promise<Post[]> {
           },
         },
       },
+      where: query ? { title: { contains: query, mode: "insensitive" } } : {},
       orderBy: {
         created_at: "desc",
       },
@@ -46,11 +48,12 @@ export async function fetchAllPosts(currentPage: number = 1): Promise<Post[]> {
 export async function fetchAllPages({
   type,
   category,
+  query,
 }: {
   type?: string;
   category?: string;
+  query?: string;
 }): Promise<number> {
-  noStore();
   try {
     const whereClause: any = {};
 
@@ -59,6 +62,9 @@ export async function fetchAllPages({
     }
     if (category) {
       whereClause.OR = [{ category: { slug: category } }];
+    }
+    if (query) {
+      whereClause.OR = [{ title: { contains: query, mode: "insensitive" } }];
     }
 
     const data = await db.post.count({
@@ -74,7 +80,6 @@ export async function fetchAllPages({
 }
 
 export async function fetchPostsById(id: string): Promise<Post> {
-  noStore();
   try {
     const data = await db.post.findUnique({
       where: {
@@ -109,7 +114,6 @@ export async function fetchPostsById(id: string): Promise<Post> {
 export async function fetchRelatedList(
   id_category: string,
 ): Promise<PopularList[]> {
-  noStore();
   try {
     const data = await db.post.findMany({
       select: {
@@ -152,8 +156,6 @@ export async function fetchPostsByType(
   type: string,
   currentPage: number = 1,
 ): Promise<Post[]> {
-  noStore();
-
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
   try {
     const data = await db.post.findMany({
@@ -196,8 +198,6 @@ export async function fetchPostsByCategory(
   category: string,
   currentPage: number = 1,
 ): Promise<Post[]> {
-  noStore();
-
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
   try {
     const data = await db.post.findMany({
@@ -238,7 +238,6 @@ export async function fetchPostsByCategory(
 }
 
 export async function fetchAllPopularList(): Promise<PopularList[]> {
-  noStore();
   try {
     const data = await db.popularPost.findMany({
       include: {

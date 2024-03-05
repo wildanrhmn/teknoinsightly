@@ -5,13 +5,17 @@ import Image from "next/image";
 import AsideWrapper from "../content/aside_wrapper";
 
 import { Comment, Post } from "@/lib/definiton/definition";
+import { fetchComment, fetchPostsById } from "@/lib/data";
 
-type Props = {
-  detail: Post;
-  comment: Comment[];
-};
-
-export default async function DetailContent({ detail, comment }: Props) {
+export default async function DetailContent({
+  content_id,
+}: {
+  content_id: string;
+}) {
+  const [detail, comment] = await Promise.all([
+    fetchPostsById(content_id),
+    fetchComment(content_id),
+  ]);
   return (
     <section className="mb-5">
       <DetailContentHead
@@ -24,7 +28,12 @@ export default async function DetailContent({ detail, comment }: Props) {
         <div className="grid grid-cols-8 p-3 gap-10">
           <div className="col-span-8 lg:col-span-5 xl:col-span-6">
             <div className="relative w-[100%] h-[200px] sm:h-[500px]">
-              <Image src="/dummy_img4.png" alt="" fill />
+              <Image
+                src={detail.image}
+                alt=""
+                fill
+                style={{ objectFit: "cover" }}
+              />
             </div>
             <div className="mt-5">
               <p

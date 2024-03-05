@@ -31,6 +31,10 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("@tailwindcss/forms"), require("tailwind-scrollbar")],
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("tailwind-scrollbar"),
+    "prettier-plugin-tailwindcss",
+  ],
 };
 export default config;

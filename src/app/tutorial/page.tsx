@@ -1,6 +1,13 @@
-import Content from "@/ui/content/Content";
+import { Metadata } from "next";
 
+import Content from "@/ui/content/Content";
 import { fetchAllPages } from "@/lib/data";
+
+export const metadata: Metadata = {
+  title: "Tutorial",
+  description:
+    "Find the latest tutorials of hardware and software on TeknoInsight!",
+};
 
 export default async function Page({
   searchParams,

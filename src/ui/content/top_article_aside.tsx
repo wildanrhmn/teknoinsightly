@@ -27,7 +27,7 @@ export default async function TopArticles({
                 >
                   {article.title}
                 </Link>
-                <span className="text-dark text-opacity-50 text-[13px]">{`Dibuat ${article.created_at} oleh ${article.author.name}`}</span>
+                <span className="text-dark text-[13px]">{`Dibuat ${article.created_at} oleh ${article.author.name}`}</span>
               </div>
             );
           })}

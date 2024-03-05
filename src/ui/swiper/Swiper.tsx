@@ -53,13 +53,15 @@ export default function SwiperCarousel({
               const pathDetail = `${path}/${path}-detail/${data.id}`;
               return (
                 <SwiperSlide key={index}>
-                  <Image
-                    src={"/dummy_img.png"}
-                    alt="dummy image"
-                    className="swiper__img"
-                    width={354}
-                    height={204}
-                  />
+                  <div className="w-[354px] h-[200px] sm:h-[250px]">
+                    <Image
+                      src={data.image}
+                      alt="dummy image"
+                      className="swiper__img"
+                      fill
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
                   <div className="w-full absolute bottom-0 bg-black bg-opacity-25 p-[5px] flex justify-center items-center lg:p-[10px]">
                     <Link
                       href={pathDetail}
