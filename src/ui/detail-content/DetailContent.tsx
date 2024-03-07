@@ -27,7 +27,7 @@ export default async function DetailContent({
           <div className="col-span-8 lg:col-span-5 xl:col-span-6">
             <div className="relative w-[100%] h-[200px] sm:h-[500px]">
               <Image
-                src={detail.image}
+                src={detail.image[1]}
                 alt=""
                 fill
                 style={{ objectFit: "cover" }}

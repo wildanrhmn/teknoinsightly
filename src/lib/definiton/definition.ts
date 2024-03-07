@@ -1,5 +1,5 @@
 export type Post = {
-  id: number;
+  id: string;
   title: string;
   created_at: string;
   updated_at: string;
@@ -13,19 +13,19 @@ export type Post = {
   };
   body: string;
   type: string;
-  image: string;
+  image: string[];
   summary: string;
 };
 
 export type PopularList = {
-  id: number;
+  id: string;
   title: string;
   id_author: string;
   created_at: string;
   author: {
     name: string;
   };
-  image: string;
+  image: string[];
   type: string;
 };
 
