@@ -79,7 +79,7 @@ export default async function ContentCard({
                 <div className="flex items-center gap-5 mt-1 md:mt-1">
                   <div className="w-[100px] h-[100px] md:w-[120px] md:h-[120px] lg:w-[150px] lg:h-[150px] relative flex-shrink-0">
                     <Image
-                      src={post.image}
+                      src={post.image[1]}
                       alt={post.title}
                       fill
                       style={{ objectFit: "cover" }}

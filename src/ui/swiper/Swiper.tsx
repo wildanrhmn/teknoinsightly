@@ -55,7 +55,7 @@ export default function SwiperCarousel({
                 <SwiperSlide key={index}>
                   <div className="w-[354px] h-[200px] sm:h-[250px]">
                     <Image
-                      src={data.image}
+                      src={data.image[1]}
                       alt="dummy image"
                       className="swiper__img"
                       fill
