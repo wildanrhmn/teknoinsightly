@@ -28,7 +28,7 @@ export default async function TopTutorials({
               >
                 <div className="relative w-[47px] h-[47px] flex-shrink-0">
                   <Image
-                    src={tutorial.image[1]}
+                    src={tutorial.image}
                     alt={tutorial.title}
                     fill
                     style={{ objectFit: "cover" }}
