@@ -267,7 +267,7 @@ export async function fetchSwiperData(): Promise<SwiperContent[]> {
   }
 }
 
-export async function fetchAllPopularList(): Promise<PopularList[] | null> {
+export async function fetchAllPopularList(): Promise<PopularList[]> {
   try {
     const data = await db.popularPost.findMany({
       include: {
