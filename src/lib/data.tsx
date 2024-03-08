@@ -1,6 +1,12 @@
 import { db } from "../../prisma/db.server";
 
-import { Category, Post, PopularList, Comment } from "./definiton/definition";
+import {
+  Category,
+  Post,
+  PopularList,
+  Comment,
+  SwiperContent,
+} from "./definiton/definition";
 import { formatDate, formatDetailDate } from "@/utils/date-formatter";
 
 const ITEMS_PER_PAGE = 6;
@@ -237,26 +243,47 @@ export async function fetchPostsByCategory(
   }
 }
 
-export async function fetchAllPopularList(): Promise<PopularList[]> {
+export async function fetchSwiperData(): Promise<SwiperContent[]> {
   try {
-    const data = await db.popularPost.findMany({
-      include: {
-        author: {
-          select: {
-            name: true,
-          },
-        },
-      },
+    const data = await db.swiper.findMany({
+      include: { Post: true },
       orderBy: {
-        created_at: "desc",
+        Post: {
+          created_at: "desc",
+        },
       },
     });
     const formattedData = data.map((post: any) => {
       return {
         ...post,
-        created_at: formatDate(post.created_at),
+        created_at: formatDate(post.Post.created_at),
+        updated_at: formatDate(post.Post.updated_at),
       };
     });
+    return formattedData;
+  } catch (error) {
+    console.log("Database Error: ", error);
+    throw new Error("Database Error");
+  }
+}
+
+export async function fetchAllPopularList(): Promise<PopularList[] | null> {
+  try {
+    const data = await db.popularPost.findMany({
+      include: {
+        Post: { include: { author: true, category: true } },
+      },
+      orderBy: {
+        Post: { created_at: "desc" },
+      },
+    });
+    const formattedData = data.map((post: PopularList) => {
+      return {
+        ...post,
+        created_at: formatDate(post.Post.created_at),
+      };
+    });
+
     return formattedData;
   } catch (error) {
     console.log("Database Error: ", error);

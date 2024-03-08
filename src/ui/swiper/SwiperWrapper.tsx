@@ -1,8 +1,8 @@
-import { fetchAllPosts } from "@/lib/data";
+import { fetchSwiperData } from "@/lib/data";
 
 import SwiperCarousel from "./Swiper";
 
 export default async function Swiper() {
-  const carouselData = await fetchAllPosts();
+  const carouselData = await fetchSwiperData();
   return <SwiperCarousel carouselData={carouselData} />;
 }

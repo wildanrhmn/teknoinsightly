@@ -16,18 +16,18 @@ export default async function TopArticles({
       </div>
       <div className="ps-[25px]">
         {topArticleData
-          ?.filter((article) => article.type === "article")
+          ?.filter((article: PopularList) => article.Post?.type === "article")
           .map((article) => {
-            const pathDetail = `/article/article-detail/${article.id}`;
+            const pathDetail = `/article/article-detail/${article.Post?.id}`;
             return (
-              <div key={article.id} className="flex flex-col mb-[10px]">
+              <div key={article.Post?.id} className="flex flex-col mb-[10px]">
                 <Link
                   href={pathDetail}
                   className="text-[#203397] text-[17px] overflow-ellipsis overflow-y-hidden line-clamp-1"
                 >
-                  {article.title}
+                  {article.Post?.title}
                 </Link>
-                <span className="text-dark text-[13px]">{`Dibuat ${article.created_at} oleh ${article.author.name}`}</span>
+                <span className="text-dark text-[13px]">{`Dibuat ${article.created_at} oleh ${article.Post?.author?.name}`}</span>
               </div>
             );
           })}

@@ -3,30 +3,41 @@ export type Post = {
   title: string;
   created_at: string;
   updated_at: string;
-  id_category: string;
-  category: {
-    slug: string;
-  };
-  id_author: string;
-  author: {
-    name: string;
-  };
-  body: string;
-  type: string;
   image: string[];
+  type: string;
+  body: string;
+  id_category: string;
+  id_author: string;
   summary: string;
+  swiperId: string | null;
+  popularId: string | null;
+  category: Category;
+  author?: User;
+};
+
+export type User = {
+  id: string;
+  name: string;
+  password: string;
+  email: string;
+  phone: string;
+  bio: string;
+  role: string;
+  image: string | null;
+};
+
+export type SwiperContent = {
+  id: string;
+  created_at: string;
+  updated_at: string;
+  Post: Post;
 };
 
 export type PopularList = {
   id: string;
-  title: string;
-  id_author: string;
   created_at: string;
-  author: {
-    name: string;
-  };
-  image: string[];
-  type: string;
+  updated_at: string;
+  Post: Post;
 };
 
 export type Category = {

@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { Icon } from "@iconify/react";
-import { Post } from "@/lib/definiton/definition";
+import { SwiperContent } from "@/lib/definiton/definition";
 
 import Link from "next/link";
 
@@ -16,7 +16,7 @@ import "./swipercustom.css";
 export default function SwiperCarousel({
   carouselData,
 }: {
-  carouselData: Post[];
+  carouselData: SwiperContent[];
 }) {
   const [prevEl, setPrevEl] = useState<HTMLElement | null>(null);
   const [nextEl, setNextEl] = useState<HTMLElement | null>(null);
@@ -48,14 +48,15 @@ export default function SwiperCarousel({
             }}
             className="mySwiper"
           >
-            {carouselData?.map((data, index) => {
-              const path = data.type === "article" ? "/article" : "/tutorial";
-              const pathDetail = `${path}/${path}-detail/${data.id}`;
+            {carouselData?.map((data: SwiperContent, index) => {
+              const path =
+                data.Post?.type === "article" ? "/article" : "/tutorial";
+              const pathDetail = `${path}/${path}-detail/${data.Post.id}`;
               return (
                 <SwiperSlide key={index}>
                   <div className="w-[354px] h-[200px] sm:h-[250px]">
                     <Image
-                      src={data.image[1]}
+                      src={data.Post.image[1]}
                       alt="dummy image"
                       className="swiper__img"
                       fill
@@ -67,7 +68,7 @@ export default function SwiperCarousel({
                       href={pathDetail}
                       className="text-primary text-[13px] font-semibold xl:text-[15px] lg:text-[14px]"
                     >
-                      {data.title}
+                      {data.Post.title}
                     </Link>
                   </div>
                 </SwiperSlide>

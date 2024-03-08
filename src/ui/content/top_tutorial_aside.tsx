@@ -1,5 +1,4 @@
 import { PopularList } from "@/lib/definiton/definition";
-import { fetchAllPopularList } from "@/lib/data";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -18,18 +17,20 @@ export default async function TopTutorials({
       </div>
       <div className="ps-[10px]">
         {topTutorialData
-          ?.filter((tutorial) => tutorial.type === "tutorial")
+          ?.filter(
+            (tutorial: PopularList) => tutorial.Post?.type === "tutorial",
+          )
           .map((tutorial) => {
-            const pathDetail = `/tutorial/tutorial-detail/${tutorial.id}`;
+            const pathDetail = `/tutorial/tutorial-detail/${tutorial.Post?.id}`;
             return (
               <div
-                key={tutorial.id}
+                key={tutorial.Post?.id}
                 className="flex items-center mb-[10px] gap-3"
               >
                 <div className="relative w-[47px] h-[47px] flex-shrink-0">
                   <Image
-                    src={tutorial.image[1]}
-                    alt={tutorial.title}
+                    src={tutorial.Post?.image[1]}
+                    alt={tutorial.Post?.title}
                     fill
                     style={{ objectFit: "cover" }}
                   />
@@ -38,7 +39,7 @@ export default async function TopTutorials({
                   href={pathDetail}
                   className="text-[#203397] text-[16px] overflow-ellipsis overflow-y-hidden line-clamp-2"
                 >
-                  {tutorial.title}
+                  {tutorial.Post?.title}
                 </Link>
               </div>
             );

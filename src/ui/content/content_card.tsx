@@ -60,7 +60,7 @@ export default async function ContentCard({
                   >
                     {post.title}
                   </Link>
-                  <span className="text-dark lg:text-[14px] md:text-[12px] text-[12px] mb-1">{`Diposting ${post.created_at} oleh ${post.author.name}`}</span>
+                  <span className="text-dark lg:text-[14px] md:text-[12px] text-[12px] mb-1">{`Diposting ${post.created_at} oleh ${post.author?.name}`}</span>
                   <div className="flex items-center justify-end sm:justify-start gap-1 mt-1">
                     <Link
                       className="bg-dark text-primary px-3 py-1 text-xs rounded-md"
@@ -85,9 +85,10 @@ export default async function ContentCard({
                       style={{ objectFit: "cover" }}
                     />
                   </div>
-                  <p className="w-[100%] lg:w-[75%] text-[14px] lg:text-[15px] text-dark overflow-ellipsis overflow-y-hidden leading-[25px] lg:leading-[27px] line-clamp-4 md:line-clamp-5 lg:line-clamp-6">
-                    {post.body}
-                  </p>
+                  <p
+                    dangerouslySetInnerHTML={{ __html: post.body }}
+                    className="w-[100%] lg:w-[75%] text-[14px] lg:text-[15px] text-dark overflow-ellipsis overflow-y-hidden leading-[25px] lg:leading-[27px] line-clamp-4 md:line-clamp-5 lg:line-clamp-6"
+                  />
                 </div>
                 <hr className="mt-3 border-t-2 border-dotted border-black opacity-10 h-1 w-[90%]" />
               </div>

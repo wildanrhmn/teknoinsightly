@@ -11,7 +11,7 @@ export default function DetailContentHead({
 }: {
   title: string;
   date: string;
-  author: string;
+  author?: string;
   id: string;
 }) {
   const pathname = usePathname();
