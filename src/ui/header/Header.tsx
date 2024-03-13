@@ -16,6 +16,7 @@ export default function Header() {
               width={65}
               height={65}
               alt="TeknoInsightly Logo"
+              priority
             />
           </div>
           <div className="hidden lg:flex items-center gap-[55px]">

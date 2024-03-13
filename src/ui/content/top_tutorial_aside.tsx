@@ -33,6 +33,7 @@ export default async function TopTutorials({
                     alt={tutorial.Post?.title}
                     fill
                     style={{ objectFit: "cover" }}
+                    sizes="(max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
                 <Link

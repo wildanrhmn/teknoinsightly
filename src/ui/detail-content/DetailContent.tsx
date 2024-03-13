@@ -30,11 +30,11 @@ export default async function DetailContent({
                 src={detail.image[1]}
                 alt=""
                 fill
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "cover", objectPosition: "center" }}
               />
             </div>
             <div className="mt-5">
-              <p
+              <div
                 className="text-[14px] sm:text-[15px] leading-7 text-dark"
                 dangerouslySetInnerHTML={{ __html: detail.body }}
               />

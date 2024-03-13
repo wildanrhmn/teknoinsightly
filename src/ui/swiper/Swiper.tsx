@@ -54,19 +54,20 @@ export default function SwiperCarousel({
               const pathDetail = `${path}/${path}-detail/${data.Post.id}`;
               return (
                 <SwiperSlide key={index}>
-                  <div className="w-[354px] h-[200px] sm:h-[250px]">
+                  <div className="relative w-full sm:h-[250px] h-[200px]">
                     <Image
                       src={data.Post.image[1]}
                       alt="dummy image"
                       className="swiper__img"
                       fill
                       style={{ objectFit: "cover" }}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>
                   <div className="w-full absolute bottom-0 bg-black bg-opacity-25 p-[5px] flex justify-center items-center lg:p-[10px]">
                     <Link
                       href={pathDetail}
-                      className="text-primary text-[13px] font-semibold xl:text-[15px] lg:text-[14px]"
+                      className="text-primary text-[13px] font-semibold xl:text-[15px] lg:text-[14px] line-clamp-1"
                     >
                       {data.Post.title}
                     </Link>

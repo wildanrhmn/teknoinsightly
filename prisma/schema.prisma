@@ -23,8 +23,8 @@ model Post {
   comments    Comment[]
   author      Author       @relation(fields: [id_author], references: [id])
   category    Category     @relation(fields: [id_category], references: [id])
-  PopularPost PopularPost? @relation(fields: [popularId], references: [id])
-  Swiper      Swiper?      @relation(fields: [swiperId], references: [id])
+  PopularPost PopularPost? @relation(fields: [popularId], references: [id], onDelete: Cascade)
+  Swiper      Swiper?      @relation(fields: [swiperId], references: [id], onDelete: Cascade)
 }
 
 model Category {

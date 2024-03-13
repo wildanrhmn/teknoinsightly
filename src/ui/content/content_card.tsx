@@ -56,7 +56,7 @@ export default async function ContentCard({
                 <div className="flex flex-col">
                   <Link
                     href={pathDetail}
-                    className="text-secondary lg:text-[24px] text-[18px] md:text-[22px] font-bold w-max"
+                    className="text-secondary lg:text-[24px] text-[18px] md:text-[22px] font-bold line-clamp-1"
                   >
                     {post.title}
                   </Link>
@@ -83,9 +83,10 @@ export default async function ContentCard({
                       alt={post.title}
                       fill
                       style={{ objectFit: "cover" }}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>
-                  <p
+                  <div
                     dangerouslySetInnerHTML={{ __html: post.body }}
                     className="w-[100%] lg:w-[75%] text-[14px] lg:text-[15px] text-dark overflow-ellipsis overflow-y-hidden leading-[25px] lg:leading-[27px] line-clamp-4 md:line-clamp-5 lg:line-clamp-6"
                   />
