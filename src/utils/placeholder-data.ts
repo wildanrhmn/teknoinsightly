@@ -164,6 +164,7 @@ const author = [
     name: "Wildan",
     email: "wildannurrahman30@gmail.com",
     phone: "081234567890",
+    password: "password",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     image: "/images/author.jpg",
   },
